@@ -292,20 +292,30 @@ end
 
 # Función que corresponde a la fitFunc, evalúa la partícula
 function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOStream, Nothing}=nothing, log_enabled::Bool=false)
-    datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA = datos
+    # Desempaquetar datos correctamente
+    datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, _, caso_estudio, tipo_codificacion = datos
+    
+    # Debug para ver qué valores están llegando
+    println("Tipo de codificación recibido: ", tipo_codificacion)
     
     # Calcular matriz de admitancias y valores relacionados
-    Y_sparse, Y_serie, Y_sh = calcularAdmitancias(datosLinea, nNodos, nLineas)
+    Y_sparse, y_series, y_shunts = calcularAdmitancias(datosLinea, nNodos, nLineas)
     Y = Matrix(Y_sparse)
     
-    # Convertir las admitancias serie y shunt a vectores
-    y_series = [1.0 / (datosLinea.R[i] + im * datosLinea.X[i]) for i in 1:nLineas]
-    y_shunts = [0.5 * (im * datosLinea.BSh[i]) for i in 1:nLineas]
+    # Extraer potencias según el modo de codificación
+    if tipo_codificacion == "Cod_Potencia"
+        potencias_P = p.position_pg[:,1]
+        potencias_Q = p.position_pg[:,2]
+    elseif tipo_codificacion == "Cod_Tramos"
+        # Aquí irá la lógica para calcular potencias desde los tramos
+        # TO DO: Implementar cálculo de potencias para Cod_Tramos
+        potencias_P = calcular_potencias_desde_tramos(p.position_pg[:,1], datosGenerador)
+        potencias_Q = p.position_pg[:,2]  # Asumimos que Q se mantiene igual
+    else
+        error("Modo de codificación no válido: $tipo_codificacion")
+    end
     
-    # Extraer potencias activas y reactivas
-    potencias_P = p.position_pg[:,1]
-    potencias_Q = p.position_pg[:,2]
-    estados_u = p.position_u  # Estado de los generadores
+    estados_u = p.position_u
     
     # Calcular potencia total generada (damos un valor inicial por si todos los generadores están apagados)
     potencia_total_generada = sum(potencias_P[i] for i in 1:p.nGeneradores if estados_u[i] >= 0.5; init=0.0)
@@ -380,10 +390,12 @@ function initialize_log(caso_estudio::String, log_enabled::Bool)
 end
 
 function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::Bool)
-    log_file = initialize_log(datos[end], log_enabled)  # datos[end] debería ser caso_estudio
+    log_file = initialize_log(datos[end-1], log_enabled)  # caso_estudio ahora es datos[end-1]
+    tipo_codificacion = datos[end]  # tipo_codificacion es el último elemento
     
     nGeneradores = size(datos[2], 1)
-    log_to_file(log_file, "Iniciando PSO Híbrido con $nParticle partículas y $nInter iteraciones", log_enabled)
+    log_to_file(log_file, "Iniciando PSO Híbrido con modo $tipo_codificacion", log_enabled)
+    log_to_file(log_file, "$nParticle partículas y $nInter iteraciones", log_enabled)
     
     # Crear enjambre
     swarm = SwarmHibrido(evaluarParticula, nGeneradores, datos, 

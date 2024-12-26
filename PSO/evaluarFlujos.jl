@@ -41,8 +41,8 @@ function evaluarFlujos(datosLinea::DataFrame, Y::Matrix{Complex{Float64}},
             violaciones_flujo += Inf
         end
         
-        # Logging
-        if log_enabled
+        # Logging 
+        if log_enabled 
             log_to_file(log_file, "\nLínea $k ($i->$j):", log_enabled)
             log_to_file(log_file, "Flujo S_ij: $(round(sqrt(S_ij_mag_sq) * bMVA, digits=2)) MVA", log_enabled)
             log_to_file(log_file, "Flujo S_ji: $(round(sqrt(S_ji_mag_sq) * bMVA, digits=2)) MVA", log_enabled)
@@ -51,4 +51,4 @@ function evaluarFlujos(datosLinea::DataFrame, Y::Matrix{Complex{Float64}},
     end
     
     return violaciones_flujo
-end
+end 

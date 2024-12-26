@@ -11,9 +11,11 @@ function ejecutar_optimizacion(caso_estudio::String, parametros::Dict)
     # Extraer parámetros
     n_particulas = parametros["n_particulas"]
     n_iteraciones = parametros["n_iteraciones"]
+    tipo_codificacion = parametros["tipo_codificacion"]
     log_enabled = get(parametros, "log", false)
     
     println("\nExtrayendo datos...")
+    println("Tipo de codificación seleccionado: ", tipo_codificacion)  # Debug
     datos = extraerDatos_PSO(caso_estudio)
     
     if parametros["tipo_pso"] == "binario"
@@ -25,7 +27,7 @@ function ejecutar_optimizacion(caso_estudio::String, parametros::Dict)
     else            
         println("\nGenerando PSO híbrido...")
         mejor_estado, mejor_potencias, mejor_coste = runPSOHibrido(
-            (datos..., caso_estudio), 
+            (datos..., caso_estudio, tipo_codificacion),  # Añadimos modo_codificacion a la tupla
             n_particulas, 
             n_iteraciones,
             log_enabled
@@ -44,9 +46,10 @@ if abspath(PROGRAM_FILE) == @__FILE__
     parametros = Dict(
         "caso_estudio" => "EjemploTwitter_kyrib",  # Caso de estudio a resolver
         "tipo_pso" => "hibrido",                   # "binario" o "hibrido"
-        "n_particulas" => 4,                      # Número de partículas
-        "n_iteraciones" => 100,                   # Número de iteraciones
-        "ejecutar_ac_opf" => 0,                     # 0 para false, 1 para true
+        "tipo_codificacion" => "Cod_Potencia",     # "Cod_Potencia" o "Cod_Tramos"
+        "n_particulas" => 4,                       # Número de partículas
+        "n_iteraciones" => 100,                    # Número de iteraciones
+        "ejecutar_ac_opf" => 0,                    # 0 para false, 1 para true
         "log" => true
     )
 
