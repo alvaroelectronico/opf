@@ -74,41 +74,22 @@ end
 # Función para actualizar la posición de las partículas
 function updatePosition!(p::ParticleHibrida, w::Float64, c1::Float64, c2::Float64, datos::Tuple)
     datosGenerador = datos[2]
-    
-    # Actualizar velocidades de u
+        
+    # Actualizar velocidades y posiciones de la binaria
     p.velocity_u = w * p.velocity_u + 
                   c1 * rand() * (p.pBest_u - p.position_u) + 
                   c2 * rand() * (p.lBest_u - p.position_u)
+    p.position_u = clamp.(p.position_u + p.velocity_u, 0.0, 1.0)
     
-    # Actualizar posiciones de u
-    p.position_u += p.velocity_u
-    p.position_u = clamp.(p.position_u, 0.0, 1.0)
-    
-    # Actualizar velocidades y posiciones de PG según máscara
+    # Actualizar velocidades y posiciones de PG
     for i in 1:p.nGeneradores
-        if p.position_u[i] >= 0.5
-            # Actualizar velocidad y posición solo si el generador está activo
-            p.velocity_pg[i,:] = w * p.velocity_pg[i,:] + 
-                                c1 * rand() * (p.pBest_pg[i,:] - p.position_pg[i,:]) + 
-                                c2 * rand() * (p.lBest_pg[i,:] - p.position_pg[i,:])
-            
-            p.position_pg[i,:] += p.velocity_pg[i,:]
-            
-            # Limitar potencias a sus rangos. 
-            # Clamp es una función que limita un valor a un rango
-            # Si el valor está por debajo del mínimo, se pone el mínimo. 
-            # Si está por encima del máximo, se pone el máximo.
-            p.position_pg[i,1] = clamp(p.position_pg[i,1], 
-                                     datosGenerador.P_MIN[i], 
-                                     datosGenerador.P_MAX[i])
-            p.position_pg[i,2] = clamp(p.position_pg[i,2], 
-                                     datosGenerador.Q_MIN[i], 
-                                     datosGenerador.Q_MAX[i])
-        else
-            # Si el generador está inactivo, solo poner velocidad a cero para que no se mueva la partícula
-            p.velocity_pg[i,:] .= 0.0
-            # Las potencias mantienen sus valores anteriores
-        end
+        p.velocity_pg[i,:] = w * p.velocity_pg[i,:] + 
+                            c1 * rand() * (p.pBest_pg[i,:] - p.position_pg[i,:]) + 
+                            c2 * rand() * (p.lBest_pg[i,:] - p.position_pg[i,:])
+        
+        p.position_pg[i,:] = clamp.(p.position_pg[i,:] + p.velocity_pg[i,:], 
+                                   [datosGenerador.P_MIN[i], datosGenerador.Q_MIN[i]], 
+                                   [datosGenerador.P_MAX[i], datosGenerador.Q_MAX[i]])
     end
 end
 
@@ -292,33 +273,37 @@ end
 
 # Función que corresponde a la fitFunc, evalúa la partícula
 function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOStream, Nothing}=nothing, log_enabled::Bool=false)
-    # Desempaquetar datos correctamente
+    # Desempaquetar datos
     datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, _, caso_estudio, tipo_codificacion = datos
-    
-    # Debug para ver qué valores están llegando
-    println("Tipo de codificación recibido: ", tipo_codificacion)
     
     # Calcular matriz de admitancias y valores relacionados
     Y_sparse, y_series, y_shunts = calcularAdmitancias(datosLinea, nNodos, nLineas)
     Y = Matrix(Y_sparse)
     
+    # Inicializar arrays
+    potencias_P = zeros(p.nGeneradores)
+    potencias_Q = zeros(p.nGeneradores)
+    estados_activos = falses(p.nGeneradores)
+    
     # Extraer potencias según el modo de codificación
     if tipo_codificacion == "Cod_Potencia"
         potencias_P = p.position_pg[:,1]
         potencias_Q = p.position_pg[:,2]
+        # Mantenemos los valores continuos de position_u para los cálculos
+        estados_activos = p.position_u .>= 0.5  # Solo para determinar si está activo o no
     elseif tipo_codificacion == "Cod_Tramos"
-        # Aquí irá la lógica para calcular potencias desde los tramos
-        # TO DO: Implementar cálculo de potencias para Cod_Tramos
-        potencias_P = calcular_potencias_desde_tramos(p.position_pg[:,1], datosGenerador)
-        potencias_Q = p.position_pg[:,2]  # Asumimos que Q se mantiene igual
+        potencias_P, potencias_Q = calcular_potencias_desde_tramos(
+            p.position_u, 
+            p.position_pg,
+            datosGenerador
+        )
+        estados_activos = p.position_u .> 0.1 # En este tipo de codificación, un generador está activo si la binaria es > 0.1
     else
         error("Modo de codificación no válido: $tipo_codificacion")
     end
     
-    estados_u = p.position_u
-    
-    # Calcular potencia total generada (damos un valor inicial por si todos los generadores están apagados)
-    potencia_total_generada = sum(potencias_P[i] for i in 1:p.nGeneradores if estados_u[i] >= 0.5; init=0.0)
+    # Calcular potencia total generada usando estados_activos
+    potencia_total_generada = sum(potencias_P[i] for i in 1:p.nGeneradores if estados_activos[i]; init=0.0)
     demanda_total = sum(datosNodo.PD)
     
     # Si no se cubre la demanda, retornar coste infinito
@@ -326,30 +311,54 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
         return Inf, zeros(nNodos)
     end
     
-    # Evaluar tensiones y violaciones
-    println("evaluarTensiones!")
+    # Modificar estados_activos para que sea Vector{Float64} en lugar de BitVector
+    estados_activos_float = Float64.(estados_activos)  # Convierte de BitVector a Vector{Float64}
+    
+    # Evaluar tensiones con el tipo correcto
     V, violaciones_tension = evaluarTensiones(datosLinea, datosGenerador, datosNodo,
-                                            nNodos, nLineas, float(bMVA), 
-                                            potencias_P, potencias_Q, estados_u,
-                                            Y, log_file, log_enabled)
+                                           nNodos, nLineas, float(bMVA), 
+                                           potencias_P, potencias_Q, p.position_u, 
+                                           Y, log_file, log_enabled)
     
     # Evaluar flujos y sus violaciones
-    println("evaluarFlujos!")
     violaciones_flujo = evaluarFlujos(datosLinea, Y, V, float(bMVA),
-                                     y_series, y_shunts,  # Ahora son vectores
+                                     y_series, y_shunts,
                                      log_file, log_enabled)
     
-    # Calcular coste de generación    
+    # Calcular coste de generación usando estados_activos
     coste = 0.0
     for i in 1:p.nGeneradores
-        if p.position_u[i] >= 0.5 # Usar position_u para determinar si el generador está activo
+        if estados_activos[i]
             coste += datosGenerador.P_COSTE1[i] * potencias_P[i]
         end
     end
-    println("coste: ", coste)
     
-    # Penalización por violaciones de tensión
+    # Penalización por violaciones
     coste_total = coste + 1000 * violaciones_tension + 1000 * violaciones_flujo
+    
+    # Modificar cómo se muestra la información de los generadores
+    if log_enabled
+        for i in 1:p.nGeneradores
+            write(log_file, "\nGenerador $i:\n")
+            # Mostrar el valor continuo de position_u
+            write(log_file, "Estado u: $(p.position_u[i])\n")
+            write(log_file, "P inicial: $(round(potencias_P[i], digits=2)) MW\n")
+            write(log_file, "Q inicial: $(round(potencias_Q[i], digits=2)) MVAr\n")
+            write(log_file, "Límites P: [$(datosGenerador.P_MIN[i]), $(datosGenerador.P_MAX[i])] MW\n")
+            write(log_file, "Límites Q: [$(datosGenerador.Q_MIN[i]), $(datosGenerador.Q_MAX[i])] MVAr\n")
+            
+            # Ajustar potencias según si está activo o no
+            if estados_activos[i]
+                write(log_file, "P ajustada: $(round(potencias_P[i], digits=2)) MW\n")
+                write(log_file, "Q ajustada: $(round(potencias_Q[i], digits=2)) MVAr\n")
+                write(log_file, "Estado: Encendido\n")
+            else
+                write(log_file, "P ajustada: 0.0 MW\n")
+                write(log_file, "Q ajustada: 0.0 MVAr\n")
+                write(log_file, "Estado: Apagado\n")
+            end
+        end
+    end
     
     return coste_total, V
 end
@@ -410,4 +419,35 @@ function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::B
     end
     
     return gBest_u, gBest_pg, fitgBest
+end
+
+function calcular_potencias_desde_tramos(position_u::Vector{Float64}, position_pg::Matrix{Float64}, datosGenerador::DataFrame)
+    nGeneradores = length(position_u)
+    potencias_P = zeros(nGeneradores) # Vector de ceros de nGeneradores
+    potencias_Q = zeros(nGeneradores) # Vector de ceros de nGeneradores
+    
+    for i in 1:nGeneradores
+        # Obtener límites de potencia para el generador i
+        Pmin = datosGenerador.P_MIN[i]
+        Pmax = datosGenerador.P_MAX[i]
+        Qmin = datosGenerador.Q_MIN[i]
+        Qmax = datosGenerador.Q_MAX[i]
+        
+        # Calcular potencias según el tramo
+        if position_u[i] <= 0.1
+            # Generador apagado
+            potencias_P[i] = 0.0
+            potencias_Q[i] = 0.0
+        elseif position_u[i] >= 0.9
+            # Potencia máxima
+            potencias_P[i] = Pmax
+            potencias_Q[i] = Qmax
+        else
+            # Interpolación lineal entre Pmin y Pmax
+            potencias_P[i] = (Pmax - Pmin)/(0.9 - 0.1) * (position_u[i] - 0.1) + Pmin
+            potencias_Q[i] = (Qmax - Qmin)/(0.9 - 0.1) * (position_u[i] - 0.1) + Qmin
+        end
+    end
+    
+    return potencias_P, potencias_Q
 end 
