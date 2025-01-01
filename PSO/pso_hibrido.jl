@@ -318,7 +318,7 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     V, violaciones_tension = evaluarTensiones(datosLinea, datosGenerador, datosNodo,
                                            nNodos, nLineas, float(bMVA), 
                                            potencias_P, potencias_Q, p.position_u, 
-                                           Y, log_file, log_enabled)
+                                           Y, log_file, log_enabled, tipo_codificacion)
     
     # Evaluar flujos y sus violaciones
     violaciones_flujo = evaluarFlujos(datosLinea, Y, V, float(bMVA),
@@ -333,11 +333,13 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
         end
     end
     
-    # Penalización por violaciones
+    # Penalización por violaciones de tensión Y flujo
     coste_total = coste + 1000 * violaciones_tension + 1000 * violaciones_flujo
     
     # Modificar cómo se muestra la información de los generadores
     if log_enabled
+        log_to_file(log_file, "\nInformación de Generadores:", log_enabled)
+        log_to_file(log_file, "----------------------------", log_enabled)
         for i in 1:p.nGeneradores
             write(log_file, "\nGenerador $i:\n")
             # Mostrar el valor continuo de position_u
@@ -398,6 +400,7 @@ function initialize_log(caso_estudio::String, log_enabled::Bool)
     return nothing
 end
 
+
 function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::Bool)
     log_file = initialize_log(datos[end-1], log_enabled)  # caso_estudio ahora es datos[end-1]
     tipo_codificacion = datos[end]  # tipo_codificacion es el último elemento
@@ -412,7 +415,7 @@ function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::B
     
     # Inicializar y ejecutar
     initialize!(swarm)
-    gBest_u, gBest_pg, fitgBest = optimize!(swarm, log_file, log_enabled)
+    gBest_u, gBest_pg, fitgBest = optimize!(swarm, log_file, log_enabled) 
     
     if log_enabled
         close(log_file)

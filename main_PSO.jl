@@ -48,7 +48,7 @@ if abspath(PROGRAM_FILE) == @__FILE__
         "tipo_pso" => "hibrido",                   # "binario" o "hibrido"
         "tipo_codificacion" => "Cod_Tramos",     # "Cod_Potencia" o "Cod_Tramos"
         "n_particulas" => 4,                       # Número de partículas
-        "n_iteraciones" => 100,                    # Número de iteraciones
+        "n_iteraciones" => 5,                    # Número de iteraciones
         "ejecutar_ac_opf" => 0,                    # 0 para false, 1 para true
         "log" => true
     )
