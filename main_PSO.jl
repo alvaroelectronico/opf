@@ -46,9 +46,9 @@ if abspath(PROGRAM_FILE) == @__FILE__
     parametros = Dict(
         "caso_estudio" => "EjemploTwitter_kyrib",  # Caso de estudio a resolver
         "tipo_pso" => "hibrido",                   # "binario" o "hibrido"
-        "tipo_codificacion" => "Cod_Tramos",     # "Cod_Potencia" o "Cod_Tramos"
+        "tipo_codificacion" => "Cod_Potencia",     # "Cod_Potencia" o "Cod_Tramos"
         "n_particulas" => 4,                       # Número de partículas
-        "n_iteraciones" => 5,                    # Número de iteraciones
+        "n_iteraciones" => 50,                    # Número de iteraciones
         "ejecutar_ac_opf" => 0,                    # 0 para false, 1 para true
         "log" => true
     )

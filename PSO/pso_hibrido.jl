@@ -310,10 +310,7 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     if potencia_total_generada < demanda_total
         return Inf, zeros(nNodos)
     end
-    
-    # Modificar estados_activos para que sea Vector{Float64} en lugar de BitVector
-    estados_activos_float = Float64.(estados_activos)  # Convierte de BitVector a Vector{Float64}
-    
+        
     # Evaluar tensiones con el tipo correcto
     V, violaciones_tension = evaluarTensiones(datosLinea, datosGenerador, datosNodo,
                                            nNodos, nLineas, float(bMVA), 
@@ -341,23 +338,22 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
         log_to_file(log_file, "\nInformación de Generadores:", log_enabled)
         log_to_file(log_file, "----------------------------", log_enabled)
         for i in 1:p.nGeneradores
-            write(log_file, "\nGenerador $i:\n")
-            # Mostrar el valor continuo de position_u
-            write(log_file, "Estado u: $(p.position_u[i])\n")
-            write(log_file, "P inicial: $(round(potencias_P[i], digits=2)) MW\n")
-            write(log_file, "Q inicial: $(round(potencias_Q[i], digits=2)) MVAr\n")
-            write(log_file, "Límites P: [$(datosGenerador.P_MIN[i]), $(datosGenerador.P_MAX[i])] MW\n")
-            write(log_file, "Límites Q: [$(datosGenerador.Q_MIN[i]), $(datosGenerador.Q_MAX[i])] MVAr\n")
+            log_to_file(log_file, "\nGenerador $i:", log_enabled)
+            log_to_file(log_file, "Estado u: $(round(p.position_u[i], digits=4))", log_enabled)
+            log_to_file(log_file, "P inicial: $(round(potencias_P[i], digits=2)) MW", log_enabled)
+            log_to_file(log_file, "Q inicial: $(round(potencias_Q[i], digits=2)) MVAr", log_enabled)
+            log_to_file(log_file, "Límites P: [$(datosGenerador.P_MIN[i]), $(datosGenerador.P_MAX[i])] MW", log_enabled)
+            log_to_file(log_file, "Límites Q: [$(datosGenerador.Q_MIN[i]), $(datosGenerador.Q_MAX[i])] MVAr", log_enabled)
             
             # Ajustar potencias según si está activo o no
             if estados_activos[i]
-                write(log_file, "P ajustada: $(round(potencias_P[i], digits=2)) MW\n")
-                write(log_file, "Q ajustada: $(round(potencias_Q[i], digits=2)) MVAr\n")
-                write(log_file, "Estado: Encendido\n")
+                log_to_file(log_file, "P ajustada: $(round(potencias_P[i], digits=2)) MW", log_enabled)
+                log_to_file(log_file, "Q ajustada: $(round(potencias_Q[i], digits=2)) MVAr", log_enabled)
+                log_to_file(log_file, "Estado: Encendido", log_enabled)
             else
-                write(log_file, "P ajustada: 0.0 MW\n")
-                write(log_file, "Q ajustada: 0.0 MVAr\n")
-                write(log_file, "Estado: Apagado\n")
+                log_to_file(log_file, "P ajustada: 0.0 MW", log_enabled)
+                log_to_file(log_file, "Q ajustada: 0.0 MVAr", log_enabled)
+                log_to_file(log_file, "Estado: Apagado", log_enabled)
             end
         end
     end
