@@ -84,7 +84,7 @@ function evaluarTensiones(datosLinea::DataFrame, datosGenerador::DataFrame, dato
                 P_calc[i] += abs(V[i]) * abs(V[j]) * abs(Y[i,j]) * cos(Vij - angle(Y[i,j]))
                 Q_calc[i] += abs(V[i]) * abs(V[j]) * abs(Y[i,j]) * sin(Vij - angle(Y[i,j]))
             end
-        end
+        end 
 
         # 2. Calcular desbalances  (vamos a ver cuánto difieren las potencias calculadas con 
         # Newton-Raphson respecto del valor de las potencias inyectadas real excluyendo nodo 

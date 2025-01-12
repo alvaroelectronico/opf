@@ -27,9 +27,9 @@ mutable struct ParticleHibrida
     nFitEval::Int
     
     # Función para inicializar las partículas
-    function ParticleHibrida(nGeneradores::Int, datosGenerador::DataFrame) 
+    function ParticleHibrida(nGeneradores::Int, datosGenerador::DataFrame, tipo_codificacion::String) 
         # Inicialización de estados (u)
-        position_u = rand(nGeneradores)  # Valores continuos entre 0 y 1
+        position_u = rand(nGeneradores)  # Vector aleatorio de números entre 0 y 1 con longitud nGeneradores
         velocity_u = rand(nGeneradores) .- 0.5  # Velocidades iniciales centradas en 0
         pBest_u = copy(position_u)
         lBest_u = copy(position_u)
@@ -38,19 +38,29 @@ mutable struct ParticleHibrida
         position_pg = zeros(Float64, nGeneradores, 2) # Creación de una matriz de ceros con 1 columna para P y 1 columna para Q
         velocity_pg = zeros(Float64, nGeneradores, 2)
         
-        # Inicializar potencias dentro de límites para todos los generadores
-        # Aquí se dan valores aleatorios dentro de los límites de potencia de los generadores 
+        # Se dan valores aleatorios dentro de los límites de potencia de los generadores 
         # para P y Q y se almacenan en la matriz position_pg inicializada previamente 
-        for i in 1:nGeneradores
-            # Potencia activa
-            Pmin = datosGenerador.P_MIN[i]
-            Pmax = datosGenerador.P_MAX[i]
-            position_pg[i,1] = Pmin + rand()*(Pmax - Pmin) # Fila i, columna 1
-            
-            # Potencia reactiva
-            Qmin = datosGenerador.Q_MIN[i]
-            Qmax = datosGenerador.Q_MAX[i]
-            position_pg[i,2] = Qmin + rand()*(Qmax - Qmin) # Fila i, columna 2
+        if tipo_codificacion == "Cod_Potencia"
+            # Inicializar potencias dentro de límites para todos los generadores
+            for i in 1:nGeneradores
+                # Potencia activa
+                Pmin = datosGenerador.P_MIN[i]
+                Pmax = datosGenerador.P_MAX[i]
+                position_pg[i,1] = Pmin + rand()*(Pmax - Pmin)
+                
+                # Potencia reactiva
+                Qmin = datosGenerador.Q_MIN[i]
+                Qmax = datosGenerador.Q_MAX[i]
+                position_pg[i,2] = Qmin + rand()*(Qmax - Qmin)
+            end
+        else  # Cod_Tramos
+            for i in 1:nGeneradores
+            # Calcular las potencias iniciales usando calcular_potencias_desde_tramos
+                potencias_P, potencias_Q = calcular_potencias_desde_tramos(position_u, datosGenerador)
+                position_pg[i, 1] = potencias_P[i]  
+                position_pg[i, 2] = potencias_Q[i]  
+            end
+                
         end
         
         pBest_pg = copy(position_pg) # La mejor posición de la partícula es la posición actual
@@ -129,10 +139,11 @@ mutable struct SwarmHibrido
         
         w = wMax # Valor de inercia inicial
         println("w: ", w)
-        datosGenerador = datos[2] # Datos de los generadores sacado del csv
+        datosGenerador = datos[2] # Datos de los generadores sacados del csv
+        tipo_codificacion = datos[9]  # Extraer tipo_codificacion del tuple datos
         
-        # Inicializar partículas con la función ParticleHibrida 	
-        particles = [ParticleHibrida(nGeneradores, datosGenerador) for i in 1:nParticle]
+        # Inicializar partículas pasando el tipo_codificacion
+        particles = [ParticleHibrida(nGeneradores, datosGenerador, tipo_codificacion) for i in 1:nParticle]
         
         # Inicializar mejores posiciones globales
         gBest_u = rand(nGeneradores) # Vector de 0 y 1 
@@ -293,8 +304,7 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
         estados_activos = p.position_u .>= 0.5  # Solo para determinar si está activo o no
     elseif tipo_codificacion == "Cod_Tramos"
         potencias_P, potencias_Q = calcular_potencias_desde_tramos(
-            p.position_u, 
-            p.position_pg,
+            p.position_u,
             datosGenerador
         )
         estados_activos = p.position_u .> 0.1 # En este tipo de codificación, un generador está activo si la binaria es > 0.1
@@ -420,7 +430,7 @@ function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::B
     return gBest_u, gBest_pg, fitgBest
 end
 
-function calcular_potencias_desde_tramos(position_u::Vector{Float64}, position_pg::Matrix{Float64}, datosGenerador::DataFrame)
+function calcular_potencias_desde_tramos(position_u::Vector{Float64}, datosGenerador::DataFrame)
     nGeneradores = length(position_u)
     potencias_P = zeros(nGeneradores) # Vector de ceros de nGeneradores
     potencias_Q = zeros(nGeneradores) # Vector de ceros de nGeneradores
