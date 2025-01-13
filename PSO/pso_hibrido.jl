@@ -13,11 +13,12 @@ mutable struct ParticleHibrida
     pBest_u::Array{Float64, 1}
     lBest_u::Array{Float64, 1}
     
-    # Potencias de generadores (PG)
-    position_pg::Array{Float64, 2}  # Matriz nx2 (P y Q)
-    velocity_pg::Array{Float64, 2}
-    pBest_pg::Array{Float64, 2}
-    lBest_pg::Array{Float64, 2}
+    # Potencias de generadores (PG) solo para la codificación de potencia
+    position_pg::Union{Matrix{Float64}, Nothing}  # Matriz nx2 (P y Q)
+    velocity_pg::Union{Matrix{Float64}, Nothing}
+    pBest_pg::Union{Matrix{Float64}, Nothing}
+    lBest_pg::Union{Matrix{Float64}, Nothing}
+
     
     # Valores de fitness
     fitValue::Float64
@@ -25,65 +26,56 @@ mutable struct ParticleHibrida
     fitlBest::Float64
     
     nFitEval::Int
+end
+
+# Constructor
+function ParticleHibrida(nGeneradores::Int, datosGenerador::DataFrame, tipo_codificacion::String) 
+    # Inicialización de estados (u)
+    position_u = rand(nGeneradores)
+    velocity_u = rand(nGeneradores) .- 0.5
+    pBest_u = copy(position_u)
+    lBest_u = copy(position_u)
     
-    # Función para inicializar las partículas
-    function ParticleHibrida(nGeneradores::Int, datosGenerador::DataFrame, tipo_codificacion::String) 
-        # Inicialización de estados (u)
-        position_u = rand(nGeneradores)  # Vector aleatorio de números entre 0 y 1 con longitud nGeneradores
-        velocity_u = rand(nGeneradores) .- 0.5  # Velocidades iniciales centradas en 0
-        pBest_u = copy(position_u)
-        lBest_u = copy(position_u)
-        
-        # Inicialización de potencias, matrices a 0
-        position_pg = zeros(Float64, nGeneradores, 2) # Creación de una matriz de ceros con 1 columna para P y 1 columna para Q
+    fitValue = Inf
+    fitpBest = Inf
+    fitlBest = Inf
+    nFitEval = 0
+    
+    if tipo_codificacion == "Cod_Potencia"
+        # Inicializar potencias dentro de límites
+        position_pg = zeros(Float64, nGeneradores, 2)
         velocity_pg = zeros(Float64, nGeneradores, 2)
         
-        # Se dan valores aleatorios dentro de los límites de potencia de los generadores 
-        # para P y Q y se almacenan en la matriz position_pg inicializada previamente 
-        if tipo_codificacion == "Cod_Potencia"
-            # Inicializar potencias dentro de límites para todos los generadores
-            for i in 1:nGeneradores
-                # Potencia activa
-                Pmin = datosGenerador.P_MIN[i]
-                Pmax = datosGenerador.P_MAX[i]
-                position_pg[i,1] = Pmin + rand()*(Pmax - Pmin)
-                
-                # Potencia reactiva
-                Qmin = datosGenerador.Q_MIN[i]
-                Qmax = datosGenerador.Q_MAX[i]
-                position_pg[i,2] = Qmin + rand()*(Qmax - Qmin)
-            end
-        else  # Cod_Tramos
-            for i in 1:nGeneradores
-            # Calcular las potencias iniciales usando calcular_potencias_desde_tramos
-                potencias_P, potencias_Q = calcular_potencias_desde_tramos(position_u, datosGenerador)
-                position_pg[i, 1] = potencias_P[i]  
-                position_pg[i, 2] = potencias_Q[i]  
-            end
-                
+        for i in 1:nGeneradores
+            Pmin = datosGenerador.P_MIN[i]
+            Pmax = datosGenerador.P_MAX[i]
+            position_pg[i,1] = Pmin + rand()*(Pmax - Pmin)
+            
+            Qmin = datosGenerador.Q_MIN[i]
+            Qmax = datosGenerador.Q_MAX[i]
+            position_pg[i,2] = Qmin + rand()*(Qmax - Qmin)
         end
         
-        pBest_pg = copy(position_pg) # La mejor posición de la partícula es la posición actual
-        lBest_pg = copy(position_pg) # La mejor posición de los vecinos es la posición actual
-        
-        # Se dan valores infinitos a los fitness para tratar de minimizarlos
-        fitValue = Inf
-        fitpBest = Inf
-        fitlBest = Inf
-        
-        # Se inicializa el número de evaluaciones de fitness a 0
-        nFitEval = 0
-        
-        # Se crea el objeto ParticleHibrida con los valores iniciales
-        new(nGeneradores, position_u, velocity_u, pBest_u, lBest_u,
-            position_pg, velocity_pg, pBest_pg, lBest_pg,
-            fitValue, fitpBest, fitlBest, nFitEval)
-    end       
+        pBest_pg = copy(position_pg)
+        lBest_pg = copy(position_pg)
+    else
+        # Para Cod_Tramos, no necesitamos las matrices pg
+        position_pg = nothing
+        velocity_pg = nothing
+        pBest_pg = nothing
+        lBest_pg = nothing
+    end
+    
+    # Crear y retornar la nueva partícula
+    ParticleHibrida(nGeneradores, position_u, velocity_u, pBest_u, lBest_u,
+                    position_pg, velocity_pg, pBest_pg, lBest_pg,
+                    fitValue, fitpBest, fitlBest, nFitEval)
 end
 
 # Función para actualizar la posición de las partículas
 function updatePosition!(p::ParticleHibrida, w::Float64, c1::Float64, c2::Float64, datos::Tuple)
     datosGenerador = datos[2]
+    tipo_codificacion = datos[9]
         
     # Actualizar velocidades y posiciones de la binaria
     p.velocity_u = w * p.velocity_u + 
@@ -91,15 +83,17 @@ function updatePosition!(p::ParticleHibrida, w::Float64, c1::Float64, c2::Float6
                   c2 * rand() * (p.lBest_u - p.position_u)
     p.position_u = clamp.(p.position_u + p.velocity_u, 0.0, 1.0)
     
-    # Actualizar velocidades y posiciones de PG
-    for i in 1:p.nGeneradores
+    # Actualizar velocidades y posiciones de PG solo para la codificación de potencia
+    if tipo_codificacion == "Cod_Potencia"
+        for i in 1:p.nGeneradores
         p.velocity_pg[i,:] = w * p.velocity_pg[i,:] + 
                             c1 * rand() * (p.pBest_pg[i,:] - p.position_pg[i,:]) + 
                             c2 * rand() * (p.lBest_pg[i,:] - p.position_pg[i,:])
         
         p.position_pg[i,:] = clamp.(p.position_pg[i,:] + p.velocity_pg[i,:], 
-                                   [datosGenerador.P_MIN[i], datosGenerador.Q_MIN[i]], 
-                                   [datosGenerador.P_MAX[i], datosGenerador.Q_MAX[i]])
+                            [datosGenerador.P_MIN[i], datosGenerador.Q_MIN[i]], 
+                            [datosGenerador.P_MAX[i], datosGenerador.Q_MAX[i]])
+        end
     end
 end
 
@@ -112,15 +106,15 @@ mutable struct SwarmHibrido
     nNeibor::Int
     nInter::Int
     
-    c1::Float
-    c2::Float
+    c1::Float64
+    c2::Float64
     
-    wMax::Float
-    wMin::Float
-    w::Float # Valor de inercia
+    wMax::Float64
+    wMin::Float64
+    w::Float64
     
     gBest_u::Array{Float64, 1}
-    gBest_pg::Array{Float64, 2}
+    gBest_pg::Union{Array{Float64, 2}, Nothing}
     fitgBest::Float64
     
     particles::Array{ParticleHibrida, 1}
@@ -138,7 +132,6 @@ mutable struct SwarmHibrido
         end
         
         w = wMax # Valor de inercia inicial
-        println("w: ", w)
         datosGenerador = datos[2] # Datos de los generadores sacados del csv
         tipo_codificacion = datos[9]  # Extraer tipo_codificacion del tuple datos
         
@@ -147,12 +140,13 @@ mutable struct SwarmHibrido
         
         # Inicializar mejores posiciones globales
         gBest_u = rand(nGeneradores) # Vector de 0 y 1 
-        gBest_pg = zeros(Float64, nGeneradores, 2) # Matriz de nGeneradores x 2 de ceros 
+        gBest_pg = tipo_codificacion == "Cod_Potencia" ? zeros(Float64, nGeneradores, 2) : nothing 
         fitgBest = Inf # Valor infinito para tratar de minimizarlo
         
         nFitEvals = 0 # Número de evaluaciones de fitness
         
-        # Se crea el objeto SwarmHibrido con los valores iniciales
+        # Se crea el objeto SwarmHibrido con los valores iniciales para la codificación de potencia
+        # se incluye gBest_pg y para la codificación de tramos no
         new(fitFunc, nGeneradores, datos, nParticle, nNeibor, nInter,
             c1, c2, wMax, wMin, w, gBest_u, gBest_pg, fitgBest,
             particles, nFitEvals)
@@ -170,13 +164,16 @@ end
 # Función para evaluar el fitness de las partículas. Se usa durante la optimización para actualizar las partículas
 function evaluate!(p::ParticleHibrida, fitFunc::Function, datos::Tuple, log_file::Union{IOStream, Nothing}, log_enabled::Bool)
     p.fitValue, _ = fitFunc(p, datos, log_file, log_enabled) 
+    tipo_codificacion = datos[9]  # Extraer tipo_codificacion del tuple datos
     p.nFitEval += 1 # Aumenta el número de evaluaciones de fitness
     
     # Actualizar mejor personal si corresponde
     if p.fitValue < p.fitpBest # Si el fitness de la partícula es menor que el mejor fitness personal, se actualiza
         p.fitpBest = p.fitValue
         p.pBest_u = copy(p.position_u)
-        p.pBest_pg = copy(p.position_pg)
+        if tipo_codificacion == "Cod_Potencia"
+            p.pBest_pg = copy(p.position_pg)
+        end
     end
     
     # Se escribe el valor del fitness en el archivo de log que se crea en la carpeta logs
@@ -188,11 +185,15 @@ function evaluate!(p::ParticleHibrida, fitFunc::Function, datos::Tuple, log_file
 end
 
 # Función para actualizar el mejor fitness de la partícula si corresponde
-function updatepBestAndFitpBest!(p::ParticleHibrida)
+function updatepBestAndFitpBest!(p::ParticleHibrida, datos::Tuple)
+    tipo_codificacion = datos[9]  # Extraer tipo_codificacion del tuple datos
+    
     if p.fitValue < p.fitpBest
         p.fitpBest = p.fitValue
         p.pBest_u = copy(p.position_u)
-        p.pBest_pg = copy(p.position_pg)
+        if tipo_codificacion == "Cod_Potencia"
+            p.pBest_pg = copy(p.position_pg)
+        end
     end
     nothing
 end
@@ -206,13 +207,16 @@ end
 
 # Función para actualizar la mejor posición global y el mejor fitness global
 function updategBestAndFitgBest!(s::SwarmHibrido)
+    tipo_codificacion = s.datos[9]
     gFits = [particle.fitValue for particle in s.particles]
     fitgBest, index = findmin(gFits) # Selecciona el menor fitness de todas las partículas y su índice
     
     # Si el fitness de la partícula seleccionada es menor que el mejor fitness global, se actualiza
     if fitgBest < s.fitgBest
         s.gBest_u = copy(s.particles[index].position_u)
-        s.gBest_pg = copy(s.particles[index].position_pg)
+        if tipo_codificacion == "Cod_Potencia"
+            s.gBest_pg = copy(s.particles[index].position_pg)
+        end
         s.fitgBest = fitgBest
     end
     nothing
@@ -220,6 +224,7 @@ end
 
 # Función para actualizar la mejor posición local y el mejor fitness local
 function updatelBestAndFitlBest!(s::SwarmHibrido)
+    tipo_codificacion = s.datos[9]
     for i in 1:s.nParticle
         neiborIds = neiborIndices(i, s.nNeibor, s.nParticle)
         neiborFits = [s.particles[Id].fitValue for Id in neiborIds]
@@ -227,7 +232,9 @@ function updatelBestAndFitlBest!(s::SwarmHibrido)
         
         if fitlBest < s.particles[i].fitlBest
             s.particles[i].lBest_u = copy(s.particles[neiborIds[index]].position_u)
-            s.particles[i].lBest_pg = copy(s.particles[neiborIds[index]].position_pg)
+            if tipo_codificacion == "Cod_Potencia"
+                s.particles[i].lBest_pg = copy(s.particles[neiborIds[index]].position_pg)
+            end
             s.particles[i].fitlBest = fitlBest
         end
     end
@@ -238,7 +245,7 @@ end
 function initialize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}=nothing, log_enabled::Bool=false)
     for particle in s.particles
         initFitValue!(particle, s.fitFunc, s.datos, log_file, log_enabled)
-        updatepBestAndFitpBest!(particle)
+        updatepBestAndFitpBest!(particle, s.datos)
     end
     
     updatelBestAndFitlBest!(s)
@@ -251,6 +258,9 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
     log_to_file(log_file, "\nIniciando PSO híbrido", log_enabled)
     mejor_fitness_historico = Inf
     iteraciones_sin_mejora = 0
+    
+    # Extraer tipo_codificacion del tuple datos
+    tipo_codificacion = s.datos[9]
     
     for i in 1:s.nInter
         log_to_file(log_file, "\n=== Iteración $i ===", log_enabled)
@@ -279,7 +289,11 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
         log_to_file(log_file, "Iteraciones sin mejora: $iteraciones_sin_mejora", log_enabled)
     end
     
-    return s.gBest_u, s.gBest_pg, s.fitgBest
+    if tipo_codificacion == "Cod_Potencia"
+        return s.gBest_u, s.gBest_pg, s.fitgBest
+    else
+        return s.gBest_u, nothing, s.fitgBest
+    end
 end
 
 # Función que corresponde a la fitFunc, evalúa la partícula
@@ -302,6 +316,8 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
         potencias_Q = p.position_pg[:,2]
         # Mantenemos los valores continuos de position_u para los cálculos
         estados_activos = p.position_u .>= 0.5  # Solo para determinar si está activo o no
+        potencias_P = potencias_P .* estados_activos
+        potencias_Q = potencias_Q .* estados_activos
     elseif tipo_codificacion == "Cod_Tramos"
         potencias_P, potencias_Q = calcular_potencias_desde_tramos(
             p.position_u,
@@ -313,7 +329,7 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     end
     
     # Calcular potencia total generada usando estados_activos
-    potencia_total_generada = sum(potencias_P[i] for i in 1:p.nGeneradores if estados_activos[i]; init=0.0)
+    potencia_total_generada = sum(potencias_P)
     demanda_total = sum(datosNodo.PD)
     
     # Si no se cubre la demanda, retornar coste infinito
@@ -426,8 +442,11 @@ function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::B
     if log_enabled
         close(log_file)
     end
-    
-    return gBest_u, gBest_pg, fitgBest
+    if tipo_codificacion == "Cod_Potencia"
+        return gBest_u, gBest_pg, fitgBest
+    else
+        return gBest_u, nothing, fitgBest
+    end
 end
 
 function calcular_potencias_desde_tramos(position_u::Vector{Float64}, datosGenerador::DataFrame)
@@ -457,6 +476,5 @@ function calcular_potencias_desde_tramos(position_u::Vector{Float64}, datosGener
             potencias_Q[i] = (Qmax - Qmin)/(0.9 - 0.1) * (position_u[i] - 0.1) + Qmin
         end
     end
-    
     return potencias_P, potencias_Q
-end 
+end
