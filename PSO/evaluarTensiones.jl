@@ -31,14 +31,14 @@ function evaluarTensiones(datosLinea::DataFrame, datosGenerador::DataFrame, dato
     # Si estamos en la codificación de potencias aleatorias, cuando la binaria es menor a 0.5
     # suponemos el generador apagado y ponemos la potencia a 0 para cumplir con la restricción
     # Pmin*x <= P <= Pmax*x
-    if tipo_codificacion == "Cod_Potencia"
-        for i in 1:length(potencias_P)
-            if estados_u[i] < 0.5  
-                potencias_P_calc[i] = 0.0 
-                potencias_Q_calc[i] = 0.0
-            end
-        end
-    end
+    #if tipo_codificacion == "Cod_Potencia"
+    #    for i in 1:length(potencias_P)
+    #        if estados_u[i] < 0.5  
+    #            potencias_P_calc[i] = 0.0 
+    #            potencias_Q_calc[i] = 0.0
+    #        end
+    #    end
+    #end
 
     # Inicializar vector de tensiones, se crea un vector de complejos tipo: 1.0 + 0.0im
     V = ones(Complex{Float64}, nNodos)
@@ -49,14 +49,24 @@ function evaluarTensiones(datosLinea::DataFrame, datosGenerador::DataFrame, dato
     
     # Primero calculamos las potencias inyectadas para nodos no slack
     for i in 2:nNodos
-        P_inyectada[i] = (potencias_P_calc[i] - datosNodo.PD[i])/bMVA
-        Q_inyectada[i] = (potencias_Q_calc[i] - datosNodo.QD[i])/bMVA
+        # Inicializar con solo la demanda negativa
+        P_inyectada[i] = -datosNodo.PD[i]/bMVA
+        Q_inyectada[i] = -datosNodo.QD[i]/bMVA
+        
+        # Si el nodo tiene generador, añadir la generación
+        gen_idx = findfirst(x -> x == i, datosGenerador.BUS)
+        if !isnothing(gen_idx)
+            P_inyectada[i] += potencias_P_calc[gen_idx]/bMVA
+            Q_inyectada[i] += potencias_Q_calc[gen_idx]/bMVA
+        end
     end
     
     # El nodo slack absorbe el desbalance total
     demanda_total = sum(datosNodo.PD)
     generacion_total = sum(potencias_P_calc)
     P_inyectada[1] = (generacion_total - demanda_total)/bMVA
+    # Las pérdidas reactivas se manejan localmente en cada área del sistema 
+    # por lo que no se consideran en el nodo slack
     Q_inyectada[1] = (potencias_Q_calc[1] - datosNodo.QD[1])/bMVA
 
     # Newton-Raphson: parámetros de control
