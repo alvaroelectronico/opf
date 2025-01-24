@@ -27,3 +27,5 @@ using Logging           # Paquete para ajustar los avisos que salen
 using Random            # Librería para crear valores aleatorios para una misma instancia 
 using Statistics        # Librería para cálculos estadísticos como la desviación típica 
 using Dates             # Librería para trabajar con tiempos y fechas 
+
+using Printf            # Librería para imprimir con formato

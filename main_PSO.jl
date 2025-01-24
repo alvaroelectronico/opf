@@ -44,11 +44,11 @@ if abspath(PROGRAM_FILE) == @__FILE__
 
     # Parámetros configurables
     parametros = Dict(
-        "caso_estudio" => "pglib_opf_case30_ieee",  # Caso de estudio a resolver
+        "caso_estudio" => "problema_chatGPT",  # Caso de estudio a resolver
         "tipo_pso" => "hibrido",                   # "binario" o "hibrido"
         "tipo_codificacion" => "Cod_Tramos",     # "Cod_Potencia" o "Cod_Tramos"
-        "n_particulas" => 31,                       # Número de partículas
-        "n_iteraciones" => 15,                    # Número de iteraciones
+        "n_particulas" => 4,                       # Número de partículas
+        "n_iteraciones" => 5,                    # Número de iteraciones
         "ejecutar_ac_opf" => 0,                    # 0 para false, 1 para true
         "log" => true
     )
@@ -64,7 +64,9 @@ if abspath(PROGRAM_FILE) == @__FILE__
         "pglib_opf_case118_ieee",
         "pglib_opf_case300_ieee",
         "pglib_opf_case1354_pegase",
-        "problema_chatGPT"
+        "problema_chatGPT",
+        "prueba",
+        "pruebaNR2"
     ]
 
      # try

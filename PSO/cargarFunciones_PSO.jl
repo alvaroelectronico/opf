@@ -16,6 +16,8 @@ include("../Funciones/limpiarTerminal.jl")      # Limpiar la terminal
 include("./pso_hibrido.jl")                     # Cargar todas las funciones relacionadas con el PSO híbrido
 include("./evaluarTensiones.jl")                # Cargar funciones de evaluación de tensiones
 
+include("./calcularTensiones.jl")               # Cargar función de cálculo de tensiones con Newton Raphson
+include("./calcularFlujos.jl")                  # Cargar función de cálculo de flujos
 
 
 

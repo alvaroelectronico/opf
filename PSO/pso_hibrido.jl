@@ -302,7 +302,7 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, _, caso_estudio, tipo_codificacion = datos
     
     # Calcular matriz de admitancias y valores relacionados
-    Y_sparse, y_series, y_shunts = calcularAdmitancias(datosLinea, nNodos, nLineas)
+    Y_sparse, y_series, y_shunt = calcularAdmitancias(datosLinea, nNodos, nLineas)
     Y = Matrix(Y_sparse)
     
     # Inicializar arrays
@@ -338,15 +338,19 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     end
         
     # Evaluar tensiones con el tipo correcto
-    V, violaciones_tension = evaluarTensiones(datosLinea, datosGenerador, datosNodo,
-                                           nNodos, nLineas, float(bMVA), 
-                                           potencias_P, potencias_Q, p.position_u, 
-                                           Y, log_file, log_enabled, tipo_codificacion)
+    # V, violaciones_tension = evaluarTensiones(datosLinea, datosGenerador, datosNodo,
+    #                                        nNodos, nLineas, float(bMVA), 
+    #                                        potencias_P, potencias_Q, p.position_u, 
+    #                                        Y, log_file, log_enabled, tipo_codificacion)
+    V, violaciones_tension, potencias_P, potencias_Q = NewtonRaphson_Tensiones(datosLinea, datosNodo, datosGenerador, 
+                                                                            float(bMVA), potencias_P, potencias_Q, Y, 
+                                                                            log_file, log_enabled)
     
     # Evaluar flujos y sus violaciones
-    violaciones_flujo = evaluarFlujos(datosLinea, Y, V, float(bMVA),
-                                     y_series, y_shunts,
-                                     log_file, log_enabled)
+    # violaciones_flujo = evaluarFlujos(datosLinea, Y, V, float(bMVA),
+    #                                  y_series, y_shunts,
+    #                                  log_file, log_enabled)
+    violaciones_flujo = calcularFlujos(datosLinea, y_series, y_shunt, V, float(bMVA), log_file, log_enabled)
     
     # Calcular coste de generación usando estados_activos
     coste = 0.0

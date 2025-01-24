@@ -3,7 +3,7 @@ using CSV
 using LinearAlgebra
 using Printf
 
-include("PSO/calcularAdmitancias.jl")
+include("./calcularAdmitancias.jl")
 
 ## Función que calcula las tensiones usando el método de Newton-Raphson
 function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
@@ -86,7 +86,21 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame,
             println("\n3. Pérdidas totales:")
             println("P_totales: ", P_totales, " p.u.")
             println("Q_totales: ", Q_totales, " p.u.")
-            return U
+
+            # Calcular violaciones de tensión
+            violaciones_tension = 0.0
+            for i in 1:nNodos
+                Vmin = datosNodo.Vmin[i]
+                Vmax = datosNodo.Vmax[i]
+                Vmag = abs(U[i])
+                if Vmag < Vmin
+                    violaciones_tension += Inf
+                elseif Vmag > Vmax
+                    violaciones_tension += Inf
+                end
+            end
+            println("\nViolaciones de tensión: ", violaciones_tension)
+            return U, violaciones_tension
         end
 
         # Elaborar el Jacobiano (i: filas, j: columnas)
@@ -151,6 +165,9 @@ function calcularFlujos(datosLinea::DataFrame,  y_series::Vector{ComplexF64}, y_
     
     # Calcular número de líneas
     nLineas = nrow(datosLinea)
+
+    # Inicializar violaciones de flujo
+    violaciones_flujo = 0.0
 
     # Inicializar matriz de admitancias de las líneas
     Y_lineas = Vector{Matrix{ComplexF64}}(undef, nLineas)
@@ -220,6 +237,19 @@ function calcularFlujos(datosLinea::DataFrame,  y_series::Vector{ComplexF64}, y_
         # Cálcular las pérdidas en cada línea
         P_perdidas[i] = P_lineas[i][1] + P_lineas[i][2]
         Q_perdidas[i] = Q_lineas[i][1] + Q_lineas[i][2]
+
+        # Calcular las violaciones de flujo
+        S_max_sq = (datosLinea.L_SMAX[i] / bMVA)^2
+        S_ij_sq = real(S_lineas[i][1])^2 + imag(S_lineas[i][1])^2
+        S_ji_sq = real(S_lineas[i][2])^2 + imag(S_lineas[i][2])^2
+        if S_ij_sq > S_max_sq
+            violaciones_flujo += Inf
+        end
+        if S_ji_sq > S_max_sq
+            violaciones_flujo += Inf
+        end
+        println("\nViolación de flujo en la línea $from-$to:", violaciones_flujo)
+        return violaciones_flujo
     end
 
     # Calcular las pérdidas totales
