@@ -1,0 +1,4805 @@
+Iniciando PSO Híbrido con modo Cod_Tramos
+14 partículas y 100 iteraciones
+############################solución############################
+Vemos que ni siquiera con muchas iteraciones
+Iniciando PSO híbrido
+
+=== Iteración 1 ===
+Inercia actual: 0.9
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 1
+
+=== Iteración 2 ===
+Inercia actual: 0.895
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 2
+
+=== Iteración 3 ===
+Inercia actual: 0.89
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 3
+
+=== Iteración 4 ===
+Inercia actual: 0.885
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 4
+
+=== Iteración 5 ===
+Inercia actual: 0.88
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 5
+
+=== Iteración 6 ===
+Inercia actual: 0.875
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 6
+
+=== Iteración 7 ===
+Inercia actual: 0.87
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 7
+
+=== Iteración 8 ===
+Inercia actual: 0.865
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 8
+
+=== Iteración 9 ===
+Inercia actual: 0.86
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 9
+
+=== Iteración 10 ===
+Inercia actual: 0.855
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 10
+
+=== Iteración 11 ===
+Inercia actual: 0.85
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 11
+
+=== Iteración 12 ===
+Inercia actual: 0.845
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 12
+
+=== Iteración 13 ===
+Inercia actual: 0.84
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 13
+
+=== Iteración 14 ===
+Inercia actual: 0.835
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 14
+
+=== Iteración 15 ===
+Inercia actual: 0.83
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 15
+
+=== Iteración 16 ===
+Inercia actual: 0.825
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 16
+
+=== Iteración 17 ===
+Inercia actual: 0.82
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 17
+
+=== Iteración 18 ===
+Inercia actual: 0.815
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 18
+
+=== Iteración 19 ===
+Inercia actual: 0.8099999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 19
+
+=== Iteración 20 ===
+Inercia actual: 0.8049999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 20
+
+=== Iteración 21 ===
+Inercia actual: 0.7999999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 21
+
+=== Iteración 22 ===
+Inercia actual: 0.7949999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 22
+
+=== Iteración 23 ===
+Inercia actual: 0.7899999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 23
+
+=== Iteración 24 ===
+Inercia actual: 0.7849999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 24
+
+=== Iteración 25 ===
+Inercia actual: 0.7799999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 25
+
+=== Iteración 26 ===
+Inercia actual: 0.7749999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 26
+
+=== Iteración 27 ===
+Inercia actual: 0.7699999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 27
+
+=== Iteración 28 ===
+Inercia actual: 0.7649999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 28
+
+=== Iteración 29 ===
+Inercia actual: 0.7599999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 29
+
+=== Iteración 30 ===
+Inercia actual: 0.7549999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 30
+
+=== Iteración 31 ===
+Inercia actual: 0.7499999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 31
+
+=== Iteración 32 ===
+Inercia actual: 0.7449999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 32
+
+=== Iteración 33 ===
+Inercia actual: 0.7399999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 33
+
+=== Iteración 34 ===
+Inercia actual: 0.7349999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 34
+
+=== Iteración 35 ===
+Inercia actual: 0.7299999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 35
+
+=== Iteración 36 ===
+Inercia actual: 0.7249999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 36
+
+=== Iteración 37 ===
+Inercia actual: 0.7199999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 37
+
+=== Iteración 38 ===
+Inercia actual: 0.7149999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 38
+
+=== Iteración 39 ===
+Inercia actual: 0.7099999999999999
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 39
+
+=== Iteración 40 ===
+Inercia actual: 0.7049999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 40
+
+=== Iteración 41 ===
+Inercia actual: 0.6999999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 41
+
+=== Iteración 42 ===
+Inercia actual: 0.6949999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 42
+
+=== Iteración 43 ===
+Inercia actual: 0.6899999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 43
+
+=== Iteración 44 ===
+Inercia actual: 0.6849999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 44
+
+=== Iteración 45 ===
+Inercia actual: 0.6799999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 45
+
+=== Iteración 46 ===
+Inercia actual: 0.6749999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 46
+
+=== Iteración 47 ===
+Inercia actual: 0.6699999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 47
+
+=== Iteración 48 ===
+Inercia actual: 0.6649999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 48
+
+=== Iteración 49 ===
+Inercia actual: 0.6599999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 49
+
+=== Iteración 50 ===
+Inercia actual: 0.6549999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 50
+
+=== Iteración 51 ===
+Inercia actual: 0.6499999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 51
+
+=== Iteración 52 ===
+Inercia actual: 0.6449999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 52
+
+=== Iteración 53 ===
+Inercia actual: 0.6399999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 53
+
+=== Iteración 54 ===
+Inercia actual: 0.6349999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 54
+
+=== Iteración 55 ===
+Inercia actual: 0.6299999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 55
+
+=== Iteración 56 ===
+Inercia actual: 0.6249999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 56
+
+=== Iteración 57 ===
+Inercia actual: 0.6199999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 57
+
+=== Iteración 58 ===
+Inercia actual: 0.6149999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 58
+
+=== Iteración 59 ===
+Inercia actual: 0.6099999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 59
+
+=== Iteración 60 ===
+Inercia actual: 0.6049999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 60
+
+=== Iteración 61 ===
+Inercia actual: 0.5999999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 61
+
+=== Iteración 62 ===
+Inercia actual: 0.5949999999999998
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 62
+
+=== Iteración 63 ===
+Inercia actual: 0.5899999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 63
+
+=== Iteración 64 ===
+Inercia actual: 0.5849999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 64
+
+=== Iteración 65 ===
+Inercia actual: 0.5799999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 65
+
+=== Iteración 66 ===
+Inercia actual: 0.5749999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 66
+
+=== Iteración 67 ===
+Inercia actual: 0.5699999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 67
+
+=== Iteración 68 ===
+Inercia actual: 0.5649999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 68
+
+=== Iteración 69 ===
+Inercia actual: 0.5599999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 69
+
+=== Iteración 70 ===
+Inercia actual: 0.5549999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 70
+
+=== Iteración 71 ===
+Inercia actual: 0.5499999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 71
+
+=== Iteración 72 ===
+Inercia actual: 0.5449999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 72
+
+=== Iteración 73 ===
+Inercia actual: 0.5399999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 73
+
+=== Iteración 74 ===
+Inercia actual: 0.5349999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 74
+
+=== Iteración 75 ===
+Inercia actual: 0.5299999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 75
+
+=== Iteración 76 ===
+Inercia actual: 0.5249999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 76
+
+=== Iteración 77 ===
+Inercia actual: 0.5199999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 77
+
+=== Iteración 78 ===
+Inercia actual: 0.5149999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 78
+
+=== Iteración 79 ===
+Inercia actual: 0.5099999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 79
+
+=== Iteración 80 ===
+Inercia actual: 0.5049999999999997
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 80
+
+=== Iteración 81 ===
+Inercia actual: 0.49999999999999967
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 81
+
+=== Iteración 82 ===
+Inercia actual: 0.49499999999999966
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 82
+
+=== Iteración 83 ===
+Inercia actual: 0.48999999999999966
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 83
+
+=== Iteración 84 ===
+Inercia actual: 0.48499999999999965
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 84
+
+=== Iteración 85 ===
+Inercia actual: 0.47999999999999965
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 85
+
+=== Iteración 86 ===
+Inercia actual: 0.47499999999999964
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 86
+
+=== Iteración 87 ===
+Inercia actual: 0.46999999999999964
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 87
+
+=== Iteración 88 ===
+Inercia actual: 0.46499999999999964
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 88
+
+=== Iteración 89 ===
+Inercia actual: 0.45999999999999963
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 89
+
+=== Iteración 90 ===
+Inercia actual: 0.4549999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 90
+
+=== Iteración 91 ===
+Inercia actual: 0.4499999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 91
+
+=== Iteración 92 ===
+Inercia actual: 0.4449999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 92
+
+=== Iteración 93 ===
+Inercia actual: 0.4399999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 93
+
+=== Iteración 94 ===
+Inercia actual: 0.4349999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 94
+
+=== Iteración 95 ===
+Inercia actual: 0.4299999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 95
+
+=== Iteración 96 ===
+Inercia actual: 0.4249999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 96
+
+=== Iteración 97 ===
+Inercia actual: 0.4199999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 97
+
+=== Iteración 98 ===
+Inercia actual: 0.4149999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 98
+
+=== Iteración 99 ===
+Inercia actual: 0.4099999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 99
+
+=== Iteración 100 ===
+Inercia actual: 0.4049999999999996
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 100

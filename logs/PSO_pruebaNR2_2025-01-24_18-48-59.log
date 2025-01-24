@@ -1,0 +1,246 @@
+Iniciando PSO Híbrido con modo Cod_Tramos
+14 partículas y 5 iteraciones
+############################solución############################
+Este el método no lineal tampoco lo resuelve. 
+
+Iniciando PSO híbrido
+
+=== Iteración 1 ===
+Inercia actual: 0.9
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 1
+
+=== Iteración 2 ===
+Inercia actual: 0.8
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 2
+
+=== Iteración 3 ===
+Inercia actual: 0.7000000000000001
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 3
+
+=== Iteración 4 ===
+Inercia actual: 0.6000000000000001
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 4
+
+=== Iteración 5 ===
+Inercia actual: 0.5000000000000001
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+fitValue: Inf
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+fitValue: Inf
+
+Actualizando partícula 5
+fitValue: Inf
+
+Actualizando partícula 6
+fitValue: Inf
+
+Actualizando partícula 7
+fitValue: Inf
+
+Actualizando partícula 8
+fitValue: Inf
+
+Actualizando partícula 9
+fitValue: Inf
+
+Actualizando partícula 10
+fitValue: Inf
+
+Actualizando partícula 11
+fitValue: Inf
+
+Actualizando partícula 12
+fitValue: Inf
+
+Actualizando partícula 13
+fitValue: Inf
+
+Actualizando partícula 14
+fitValue: Inf
+
+Mejor fitness actual: Inf
+Iteraciones sin mejora: 5

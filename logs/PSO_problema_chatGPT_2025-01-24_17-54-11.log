@@ -1,0 +1,2362 @@
+Iniciando PSO Híbrido con modo Cod_Tramos
+4 partículas y 4 iteraciones
+
+Iniciando PSO híbrido
+
+=== Iteración 1 ===
+Inercia actual: 0.9
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.47394227597426986, 0.09938654274605502]
+Qgen: [0.0, 0.869711379871349, -0.3415127633859329]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.07394227597426983, -0.100613457253945]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 0.869711379871349, -0.3415127633859329]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.07394227597426739, 0.0][i]
+ΔQiny[2]: [0.0, 0.869711379871349, 0.0][i]
+ΔPiny[3]: [0.0, 0.07394227597426739, -0.10061345725394744][i]
+ΔQiny[3]: [0.0, 0.869711379871349, -0.3415127633859329][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [0.001575703156486232, -0.0042428212844542595, 0.04659699987855885, 0.006222861769982777][i-1]
+ΔV2: [0.001575703156486232, -0.0042428212844542595, 0.04659699987855885, 0.006222861769982777][i-1 + (nNodos-1)]
+Δθ3: [0.001575703156486232, -0.0042428212844542595, 0.04659699987855885, 0.006222861769982777][i-1]
+ΔV3: [0.001575703156486232, -0.0042428212844542595, 0.04659699987855885, 0.006222861769982777][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.046596999878559 θ2: 0.001575703156486232
+U3: 1.0062228617699829 θ3: -0.0042428212844542595
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0465957006121513 + 0.0016491255138582164im, 1.0062138050068192 - 0.004269210966071967im]
+Piny_new[2]: [0.0, 0.07776636214188834, 0.0][i]
+Qiny_new[2]: [0.0, 0.9104285794544678, 0.0][i]
+Piny_new[3]: [0.0, 0.07776636214188834, -0.10396721666402095][i]
+Qiny_new[3]: [0.0, 0.9104285794544678, -0.34336911661673336][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.0038240861676185067, 0.0][i]
+ΔQiny[2]: [0.0, -0.0407171995831187, 0.0][i]
+ΔPiny[3]: [0.0, -0.0038240861676185067, 0.003353759410075957][i]
+ΔQiny[3]: [0.0, -0.0407171995831187, 0.001856353230800467][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00012766248373599043, 8.504840519157352e-5, -0.0024098402256130537, -0.001131006189046068][i-1]
+ΔV2: [-0.00012766248373599043, 8.504840519157352e-5, -0.0024098402256130537, -0.001131006189046068][i-1 + (nNodos-1)]
+Δθ3: [-0.00012766248373599043, 8.504840519157352e-5, -0.0024098402256130537, -0.001131006189046068][i-1]
+ΔV3: [-0.00012766248373599043, 8.504840519157352e-5, -0.0024098402256130537, -0.001131006189046068][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.044187159652946 θ2: 0.0014480406727502416
+U3: 1.0050918555809367 θ3: -0.004157772879262685
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0441860649159427 + 0.0015120249487330767im, 1.0050831680441485 - 0.004178931618027006im]
+Piny_new[2]: [0.0, 0.07395317936148153, 0.0][i]
+Qiny_new[2]: [0.0, 0.869800643478282, 0.0][i]
+Piny_new[3]: [0.0, 0.07395317936148153, -0.10062224605441737][i]
+Qiny_new[3]: [0.0, 0.869800643478282, -0.3415141123829151][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -1.0903387211699811e-5, 0.0][i]
+ΔQiny[2]: [0.0, -8.926360693295443e-5, 0.0][i]
+ΔPiny[3]: [0.0, -1.0903387211699811e-5, 8.78880047237851e-6][i]
+ΔQiny[3]: [0.0, -8.926360693295443e-5, 1.348996982231121e-6][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0442∠[0.0, 0.08021409131831525, 0.0][i]°
+Nodo 3: V = 1.0051∠[0.0, 0.08021409131831525, -0.24064227395494575][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.3266690666929434 p.u.
+Qgen_slack: -0.49269232960091003 p.u.
+
+3. Pérdidas totales:
+P_totales: -2.114586731750967e-6 p.u.
+Q_totales: 0.5406111059620713 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.4422∠91.9571°
+I_2 = 0.4422∠-88.0429°
+
+Potencias aparentes de la línea 1-2:
+S_1 = -0.015099999999999997 - 0.4418999999999986im
+S_2 = 0.015099999999999999 + 0.46145036199999856im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.0658∠50.5513°
+I_3 = 0.0658∠-129.4487°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.04179999999999999 - 0.050799999999998846im
+S_3 = -0.04179999999999999 + 0.05123278799999884im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4471∠65.0023°
+I_3 = 2.9679∠9.2144°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.8719776767704401 - 4.0588766447651965im
+S_3 = 3.0597529701332595 - 0.49182101139033624im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 4.9317306469036994
+Q_totales = -4.530714506155533
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 1.0
+P inicial: 0.33 MW
+Q inicial: -0.49 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.33 MW
+Q ajustada: -0.49 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 0.8479
+P inicial: 0.47 MW
+Q inicial: 0.87 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.47 MW
+Q ajustada: 0.87 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.3634
+P inicial: 0.1 MW
+Q inicial: -0.34 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.1 MW
+Q ajustada: -0.34 MVAr
+Estado: Encendido
+fitValue: 31.454264937592963
+
+Actualizando partícula 3
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.0]
+Qgen: [0.0, 1.0, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 1.0, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+Δθ3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0666666666666667 θ2: -2.7007562852787717e-16
+U3: 1.0333333333333334 θ3: -0.010000000000000269
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0666666666666667 - 2.8808067042973564e-16im, 1.033281667097221 - 0.0103331611119725im]
+Piny_new[2]: [0.0, 0.11022038519437079, 0.0][i]
+Qiny_new[2]: [0.0, 1.0672177731851984, 0.0][i]
+Piny_new[3]: [0.0, 0.11022038519437079, -0.21355199631409238][i]
+Qiny_new[3]: [0.0, 1.0672177731851984, 0.0010677688796625045][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.01022038519437081, 0.0][i]
+ΔQiny[2]: [0.0, -0.06721777318519839, 0.0][i]
+ΔPiny[3]: [0.0, -0.01022038519437081, 0.013551996314092374][i]
+ΔQiny[3]: [0.0, -0.06721777318519839, -0.0010677688796625045][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+Δθ3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626888907393965 θ2: -0.00018918571369713752
+U3: 1.03129913560708 θ3: -0.009501958096482731
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626888717219232 - 0.00020104555503327402im, 1.0312525793977556 - 0.009799213712650169im]
+Piny_new[2]: [0.0, 0.10005141061820635, 0.0][i]
+Qiny_new[2]: [0.0, 1.0002387513105169, 0.0][i]
+Piny_new[3]: [0.0, 0.10005141061820635, -0.20005400329503553][i]
+Qiny_new[3]: [0.0, 1.0002387513105169, 6.246611814152489e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -5.141061820637671e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00023875131051687148, 0.0][i]
+ΔPiny[3]: [0.0, -5.141061820637671e-5, 5.4003295035520704e-5][i]
+ΔQiny[3]: [0.0, -0.00023875131051687148, -6.246611814152489e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626745910198325 θ2: -0.0001906259267498158
+U3: 1.0312917064781448 θ3: -0.009500293644350469
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626745717119683 - 0.00020257332751977722im, 1.0312451669129719 - 0.009797426664237198im]
+Piny_new[2]: [0.0, 0.10000000091827732, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000003097681, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000091827732, -0.20000000083584252][i]
+Qiny_new[3]: [0.0, 1.000000003097681, 1.1636496068144413e-10][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -9.182773430538305e-10, 0.0][i]
+ΔQiny[2]: [0.0, -3.097681000596708e-9, 0.0][i]
+ΔPiny[3]: [0.0, -9.182773430538305e-10, 8.358425063192954e-10][i]
+ΔQiny[3]: [0.0, -3.097681000596708e-9, -1.1636496068144413e-10][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0627∠[0.0, -0.011459155902616466, 0.0][i]°
+Nodo 3: V = 1.0313∠[0.0, -0.011459155902616466, -0.544309905374282][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.39999999991757296 p.u.
+Qgen_slack: -0.9391973862494041 p.u.
+
+3. Pérdidas totales:
+P_totales: -8.242705129557493e-11 p.u.
+Q_totales: 0.5925839056758981 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.6267∠89.8172°
+I_2 = 0.6267∠-90.1828°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.0019999999999999996 - 0.6266999999999996im
+S_2 = -0.0019999999999999996 + 0.6659756889999996im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.3275∠72.5886°
+I_3 = 0.3275∠-107.4114°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.09799999999999998 - 0.3125im
+S_3 = -0.09799999999999998 + 0.323226025im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4671∠64.6780°
+I_3 = 3.0729∠10.5513°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9307271551582503 - 4.182782924472497im
+S_3 = 3.2101622898834696 - 0.5985645176407277im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.14088944504172
+Q_totales = -4.731345728113224
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.8076
+P inicial: 0.4 MW
+Q inicial: -0.94 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.4 MW
+Q ajustada: -0.94 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 0.9215
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.99999999835146
+
+Actualizando partícula 4
+fitValue: Inf
+
+Mejora encontrada: Inf
+
+Mejor fitness actual: 27.99999999835146
+Iteraciones sin mejora: 0
+
+=== Iteración 2 ===
+Inercia actual: 0.775
+
+Actualizando partícula 1
+fitValue: Inf
+
+Actualizando partícula 2
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.0]
+Qgen: [0.0, 1.0, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 1.0, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+Δθ3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0666666666666667 θ2: -2.7007562852787717e-16
+U3: 1.0333333333333334 θ3: -0.010000000000000269
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0666666666666667 - 2.8808067042973564e-16im, 1.033281667097221 - 0.0103331611119725im]
+Piny_new[2]: [0.0, 0.11022038519437079, 0.0][i]
+Qiny_new[2]: [0.0, 1.0672177731851984, 0.0][i]
+Piny_new[3]: [0.0, 0.11022038519437079, -0.21355199631409238][i]
+Qiny_new[3]: [0.0, 1.0672177731851984, 0.0010677688796625045][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.01022038519437081, 0.0][i]
+ΔQiny[2]: [0.0, -0.06721777318519839, 0.0][i]
+ΔPiny[3]: [0.0, -0.01022038519437081, 0.013551996314092374][i]
+ΔQiny[3]: [0.0, -0.06721777318519839, -0.0010677688796625045][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+Δθ3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626888907393965 θ2: -0.00018918571369713752
+U3: 1.03129913560708 θ3: -0.009501958096482731
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626888717219232 - 0.00020104555503327402im, 1.0312525793977556 - 0.009799213712650169im]
+Piny_new[2]: [0.0, 0.10005141061820635, 0.0][i]
+Qiny_new[2]: [0.0, 1.0002387513105169, 0.0][i]
+Piny_new[3]: [0.0, 0.10005141061820635, -0.20005400329503553][i]
+Qiny_new[3]: [0.0, 1.0002387513105169, 6.246611814152489e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -5.141061820637671e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00023875131051687148, 0.0][i]
+ΔPiny[3]: [0.0, -5.141061820637671e-5, 5.4003295035520704e-5][i]
+ΔQiny[3]: [0.0, -0.00023875131051687148, -6.246611814152489e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626745910198325 θ2: -0.0001906259267498158
+U3: 1.0312917064781448 θ3: -0.009500293644350469
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626745717119683 - 0.00020257332751977722im, 1.0312451669129719 - 0.009797426664237198im]
+Piny_new[2]: [0.0, 0.10000000091827732, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000003097681, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000091827732, -0.20000000083584252][i]
+Qiny_new[3]: [0.0, 1.000000003097681, 1.1636496068144413e-10][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -9.182773430538305e-10, 0.0][i]
+ΔQiny[2]: [0.0, -3.097681000596708e-9, 0.0][i]
+ΔPiny[3]: [0.0, -9.182773430538305e-10, 8.358425063192954e-10][i]
+ΔQiny[3]: [0.0, -3.097681000596708e-9, -1.1636496068144413e-10][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0627∠[0.0, -0.011459155902616466, 0.0][i]°
+Nodo 3: V = 1.0313∠[0.0, -0.011459155902616466, -0.544309905374282][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.39999999991757296 p.u.
+Qgen_slack: -0.9391973862494041 p.u.
+
+3. Pérdidas totales:
+P_totales: -8.242705129557493e-11 p.u.
+Q_totales: 0.5925839056758981 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.6267∠89.8172°
+I_2 = 0.6267∠-90.1828°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.0019999999999999996 - 0.6266999999999996im
+S_2 = -0.0019999999999999996 + 0.6659756889999996im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.3275∠72.5886°
+I_3 = 0.3275∠-107.4114°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.09799999999999998 - 0.3125im
+S_3 = -0.09799999999999998 + 0.323226025im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4671∠64.6780°
+I_3 = 3.0729∠10.5513°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9307271551582503 - 4.182782924472497im
+S_3 = 3.2101622898834696 - 0.5985645176407277im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.14088944504172
+Q_totales = -4.731345728113224
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.9342
+P inicial: 0.4 MW
+Q inicial: -0.94 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.4 MW
+Q ajustada: -0.94 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 0.9917
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.99999999835146
+
+Actualizando partícula 3
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.0]
+Qgen: [0.0, 1.0, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 1.0, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+Δθ3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0666666666666667 θ2: -2.7007562852787717e-16
+U3: 1.0333333333333334 θ3: -0.010000000000000269
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0666666666666667 - 2.8808067042973564e-16im, 1.033281667097221 - 0.0103331611119725im]
+Piny_new[2]: [0.0, 0.11022038519437079, 0.0][i]
+Qiny_new[2]: [0.0, 1.0672177731851984, 0.0][i]
+Piny_new[3]: [0.0, 0.11022038519437079, -0.21355199631409238][i]
+Qiny_new[3]: [0.0, 1.0672177731851984, 0.0010677688796625045][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.01022038519437081, 0.0][i]
+ΔQiny[2]: [0.0, -0.06721777318519839, 0.0][i]
+ΔPiny[3]: [0.0, -0.01022038519437081, 0.013551996314092374][i]
+ΔQiny[3]: [0.0, -0.06721777318519839, -0.0010677688796625045][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+Δθ3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626888907393965 θ2: -0.00018918571369713752
+U3: 1.03129913560708 θ3: -0.009501958096482731
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626888717219232 - 0.00020104555503327402im, 1.0312525793977556 - 0.009799213712650169im]
+Piny_new[2]: [0.0, 0.10005141061820635, 0.0][i]
+Qiny_new[2]: [0.0, 1.0002387513105169, 0.0][i]
+Piny_new[3]: [0.0, 0.10005141061820635, -0.20005400329503553][i]
+Qiny_new[3]: [0.0, 1.0002387513105169, 6.246611814152489e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -5.141061820637671e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00023875131051687148, 0.0][i]
+ΔPiny[3]: [0.0, -5.141061820637671e-5, 5.4003295035520704e-5][i]
+ΔQiny[3]: [0.0, -0.00023875131051687148, -6.246611814152489e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626745910198325 θ2: -0.0001906259267498158
+U3: 1.0312917064781448 θ3: -0.009500293644350469
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626745717119683 - 0.00020257332751977722im, 1.0312451669129719 - 0.009797426664237198im]
+Piny_new[2]: [0.0, 0.10000000091827732, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000003097681, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000091827732, -0.20000000083584252][i]
+Qiny_new[3]: [0.0, 1.000000003097681, 1.1636496068144413e-10][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -9.182773430538305e-10, 0.0][i]
+ΔQiny[2]: [0.0, -3.097681000596708e-9, 0.0][i]
+ΔPiny[3]: [0.0, -9.182773430538305e-10, 8.358425063192954e-10][i]
+ΔQiny[3]: [0.0, -3.097681000596708e-9, -1.1636496068144413e-10][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0627∠[0.0, -0.011459155902616466, 0.0][i]°
+Nodo 3: V = 1.0313∠[0.0, -0.011459155902616466, -0.544309905374282][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.39999999991757296 p.u.
+Qgen_slack: -0.9391973862494041 p.u.
+
+3. Pérdidas totales:
+P_totales: -8.242705129557493e-11 p.u.
+Q_totales: 0.5925839056758981 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.6267∠89.8172°
+I_2 = 0.6267∠-90.1828°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.0019999999999999996 - 0.6266999999999996im
+S_2 = -0.0019999999999999996 + 0.6659756889999996im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.3275∠72.5886°
+I_3 = 0.3275∠-107.4114°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.09799999999999998 - 0.3125im
+S_3 = -0.09799999999999998 + 0.323226025im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4671∠64.6780°
+I_3 = 3.0729∠10.5513°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9307271551582503 - 4.182782924472497im
+S_3 = 3.2101622898834696 - 0.5985645176407277im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.14088944504172
+Q_totales = -4.731345728113224
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 1.0
+P inicial: 0.4 MW
+Q inicial: -0.94 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.4 MW
+Q ajustada: -0.94 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 1.0
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.99999999835146
+
+Actualizando partícula 4
+fitValue: Inf
+
+Mejor fitness actual: 27.99999999835146
+Iteraciones sin mejora: 1
+
+=== Iteración 3 ===
+Inercia actual: 0.65
+
+Actualizando partícula 1
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.09621361087692755]
+Qgen: [0.0, 1.0, -0.3838185216409662]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.10378638912307246]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, -0.3838185216409662]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.1037863891230749][i]
+ΔQiny[3]: [0.0, 1.0, -0.3838185216409662][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [0.0032071203625639914, -0.003585759274871754, 0.05387271594530114, 0.007745431890602256][i-1]
+ΔV2: [0.0032071203625639914, -0.003585759274871754, 0.05387271594530114, 0.007745431890602256][i-1 + (nNodos-1)]
+Δθ3: [0.0032071203625639914, -0.003585759274871754, 0.05387271594530114, 0.007745431890602256][i-1]
+ΔV3: [0.0032071203625639914, -0.003585759274871754, 0.05387271594530114, 0.007745431890602256][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0538727159453012 θ2: 0.0032071203625639914
+U3: 1.0077454318906023 θ3: -0.003585759274871754
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.053867296082267 + 0.003379890852805773im, 1.0077389532686534 - 0.0036135247855151355im]
+Piny_new[2]: [0.0, 0.10594114118011966, 0.0][i]
+Qiny_new[2]: [0.0, 1.0541719422694327, 0.0][i]
+Piny_new[3]: [0.0, 0.10594114118011966, -0.10827748050720758][i]
+Qiny_new[3]: [0.0, 1.0541719422694327, -0.38648154794541134][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.00594114118011968, 0.0][i]
+ΔQiny[2]: [0.0, -0.05417194226943267, 0.0][i]
+ΔPiny[3]: [0.0, -0.00594114118011968, 0.004491091384135115][i]
+ΔQiny[3]: [0.0, -0.05417194226943267, 0.0026630263044451485][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00021682078042956264, 8.765692918220595e-5, -0.0031550650607462577, -0.0014721332106309322][i-1]
+ΔV2: [-0.00021682078042956264, 8.765692918220595e-5, -0.0031550650607462577, -0.0014721332106309322][i-1 + (nNodos-1)]
+Δθ3: [-0.00021682078042956264, 8.765692918220595e-5, -0.0031550650607462577, -0.0014721332106309322][i-1]
+ΔV3: [-0.00021682078042956264, 8.765692918220595e-5, -0.0031550650607462577, -0.0014721332106309322][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0507176508845548 θ2: 0.002990299582134429
+U3: 1.0062732986799714 θ3: -0.0034981023456895476
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.050712953186392 + 0.003141955869871673im, 1.0062671419439393 - 0.003520039807549987im]
+Piny_new[2]: [0.0, 0.10002154244686232, 0.0][i]
+Qiny_new[2]: [0.0, 1.0001534997771124, 0.0][i]
+Piny_new[3]: [0.0, 0.10002154244686232, -0.10380238182363907][i]
+Qiny_new[3]: [0.0, 1.0001534997771124, -0.3838209926800875][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -2.1542446862338194e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00015349977711243135, 0.0][i]
+ΔPiny[3]: [0.0, -2.1542446862338194e-5, 1.5992700566611062e-5][i]
+ΔQiny[3]: [0.0, -0.00015349977711243135, 2.4710391213211835e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-8.117178651224182e-7, 3.074857353851151e-7, -9.152517181286141e-6, -4.5349769132258836e-6][i-1]
+ΔV2: [-8.117178651224182e-7, 3.074857353851151e-7, -9.152517181286141e-6, -4.5349769132258836e-6][i-1 + (nNodos-1)]
+Δθ3: [-8.117178651224182e-7, 3.074857353851151e-7, -9.152517181286141e-6, -4.5349769132258836e-6][i-1]
+ΔV3: [-8.117178651224182e-7, 3.074857353851151e-7, -9.152517181286141e-6, -4.5349769132258836e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0507084983673736 θ2: 0.0029894878642693066
+U3: 1.006268763703058 θ3: -0.003497794859954163
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0507038032601443 + 0.0031410756260971348im, 1.0062626080770822 - 0.0035197145323710936im]
+Piny_new[2]: [0.0, 0.10000000023333623, 0.0][i]
+Qiny_new[2]: [0.0, 1.0000000012716384, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000023333623, -0.10378638929607036][i]
+Qiny_new[3]: [0.0, 1.0000000012716384, -0.38381852163654356][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -2.3333625309707173e-10, 0.0][i]
+ΔQiny[2]: [0.0, -1.271638350175408e-9, 0.0][i]
+ΔPiny[3]: [0.0, -2.3333625309707173e-10, 1.7299789378810715e-10][i]
+ΔQiny[3]: [0.0, -1.271638350175408e-9, -4.422628929745542e-12][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0507∠[0.0, 0.17188733853924698, 0.0][i]°
+Nodo 3: V = 1.0063∠[0.0, 0.17188733853924698, -0.20053522829578813][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.30378638906274175 p.u.
+Qgen_slack: -0.569664113372264 p.u.
+
+3. Pérdidas totales:
+P_totales: -6.033073346456419e-11 p.u.
+Q_totales: 0.5528057773890103 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.508∠93.5440°
+I_2 = 0.508∠-86.4560°
+
+Potencias aparentes de la línea 1-2:
+S_1 = -0.0314 - 0.5069999999999997im
+S_2 = 0.0314 + 0.5328034959999995im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.0718∠60.6509°
+I_3 = 0.0718∠-119.3491°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.035199999999999995 - 0.06259999999999977im
+S_3 = -0.035199999999999995 + 0.06311577999999976im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4964∠65.4328°
+I_3 = 2.9872∠8.3113°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.8667468530313995 - 4.121569768561997im
+S_3 = 3.10706632020408 - 0.4444163706647186im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 4.973813173235479
+Q_totales = -4.539666863226716
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.6198
+P inicial: 0.3 MW
+Q inicial: -0.57 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.3 MW
+Q ajustada: -0.57 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 1.0
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.3465
+P inicial: 0.1 MW
+Q inicial: -0.38 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.1 MW
+Q ajustada: -0.38 MVAr
+Estado: Encendido
+fitValue: 31.848544433870487
+
+Actualizando partícula 2
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.0]
+Qgen: [0.0, 1.0, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 1.0, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+Δθ3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0666666666666667 θ2: -2.7007562852787717e-16
+U3: 1.0333333333333334 θ3: -0.010000000000000269
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0666666666666667 - 2.8808067042973564e-16im, 1.033281667097221 - 0.0103331611119725im]
+Piny_new[2]: [0.0, 0.11022038519437079, 0.0][i]
+Qiny_new[2]: [0.0, 1.0672177731851984, 0.0][i]
+Piny_new[3]: [0.0, 0.11022038519437079, -0.21355199631409238][i]
+Qiny_new[3]: [0.0, 1.0672177731851984, 0.0010677688796625045][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.01022038519437081, 0.0][i]
+ΔQiny[2]: [0.0, -0.06721777318519839, 0.0][i]
+ΔPiny[3]: [0.0, -0.01022038519437081, 0.013551996314092374][i]
+ΔQiny[3]: [0.0, -0.06721777318519839, -0.0010677688796625045][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+Δθ3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626888907393965 θ2: -0.00018918571369713752
+U3: 1.03129913560708 θ3: -0.009501958096482731
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626888717219232 - 0.00020104555503327402im, 1.0312525793977556 - 0.009799213712650169im]
+Piny_new[2]: [0.0, 0.10005141061820635, 0.0][i]
+Qiny_new[2]: [0.0, 1.0002387513105169, 0.0][i]
+Piny_new[3]: [0.0, 0.10005141061820635, -0.20005400329503553][i]
+Qiny_new[3]: [0.0, 1.0002387513105169, 6.246611814152489e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -5.141061820637671e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00023875131051687148, 0.0][i]
+ΔPiny[3]: [0.0, -5.141061820637671e-5, 5.4003295035520704e-5][i]
+ΔQiny[3]: [0.0, -0.00023875131051687148, -6.246611814152489e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626745910198325 θ2: -0.0001906259267498158
+U3: 1.0312917064781448 θ3: -0.009500293644350469
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626745717119683 - 0.00020257332751977722im, 1.0312451669129719 - 0.009797426664237198im]
+Piny_new[2]: [0.0, 0.10000000091827732, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000003097681, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000091827732, -0.20000000083584252][i]
+Qiny_new[3]: [0.0, 1.000000003097681, 1.1636496068144413e-10][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -9.182773430538305e-10, 0.0][i]
+ΔQiny[2]: [0.0, -3.097681000596708e-9, 0.0][i]
+ΔPiny[3]: [0.0, -9.182773430538305e-10, 8.358425063192954e-10][i]
+ΔQiny[3]: [0.0, -3.097681000596708e-9, -1.1636496068144413e-10][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0627∠[0.0, -0.011459155902616466, 0.0][i]°
+Nodo 3: V = 1.0313∠[0.0, -0.011459155902616466, -0.544309905374282][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.39999999991757296 p.u.
+Qgen_slack: -0.9391973862494041 p.u.
+
+3. Pérdidas totales:
+P_totales: -8.242705129557493e-11 p.u.
+Q_totales: 0.5925839056758981 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.6267∠89.8172°
+I_2 = 0.6267∠-90.1828°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.0019999999999999996 - 0.6266999999999996im
+S_2 = -0.0019999999999999996 + 0.6659756889999996im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.3275∠72.5886°
+I_3 = 0.3275∠-107.4114°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.09799999999999998 - 0.3125im
+S_3 = -0.09799999999999998 + 0.323226025im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4671∠64.6780°
+I_3 = 3.0729∠10.5513°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9307271551582503 - 4.182782924472497im
+S_3 = 3.2101622898834696 - 0.5985645176407277im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.14088944504172
+Q_totales = -4.731345728113224
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.7445
+P inicial: 0.4 MW
+Q inicial: -0.94 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.4 MW
+Q ajustada: -0.94 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 1.0
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.99999999835146
+
+Actualizando partícula 3
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.0]
+Qgen: [0.0, 1.0, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 1.0, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+Δθ3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0666666666666667 θ2: -2.7007562852787717e-16
+U3: 1.0333333333333334 θ3: -0.010000000000000269
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0666666666666667 - 2.8808067042973564e-16im, 1.033281667097221 - 0.0103331611119725im]
+Piny_new[2]: [0.0, 0.11022038519437079, 0.0][i]
+Qiny_new[2]: [0.0, 1.0672177731851984, 0.0][i]
+Piny_new[3]: [0.0, 0.11022038519437079, -0.21355199631409238][i]
+Qiny_new[3]: [0.0, 1.0672177731851984, 0.0010677688796625045][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.01022038519437081, 0.0][i]
+ΔQiny[2]: [0.0, -0.06721777318519839, 0.0][i]
+ΔPiny[3]: [0.0, -0.01022038519437081, 0.013551996314092374][i]
+ΔQiny[3]: [0.0, -0.06721777318519839, -0.0010677688796625045][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+Δθ3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626888907393965 θ2: -0.00018918571369713752
+U3: 1.03129913560708 θ3: -0.009501958096482731
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626888717219232 - 0.00020104555503327402im, 1.0312525793977556 - 0.009799213712650169im]
+Piny_new[2]: [0.0, 0.10005141061820635, 0.0][i]
+Qiny_new[2]: [0.0, 1.0002387513105169, 0.0][i]
+Piny_new[3]: [0.0, 0.10005141061820635, -0.20005400329503553][i]
+Qiny_new[3]: [0.0, 1.0002387513105169, 6.246611814152489e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -5.141061820637671e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00023875131051687148, 0.0][i]
+ΔPiny[3]: [0.0, -5.141061820637671e-5, 5.4003295035520704e-5][i]
+ΔQiny[3]: [0.0, -0.00023875131051687148, -6.246611814152489e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626745910198325 θ2: -0.0001906259267498158
+U3: 1.0312917064781448 θ3: -0.009500293644350469
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626745717119683 - 0.00020257332751977722im, 1.0312451669129719 - 0.009797426664237198im]
+Piny_new[2]: [0.0, 0.10000000091827732, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000003097681, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000091827732, -0.20000000083584252][i]
+Qiny_new[3]: [0.0, 1.000000003097681, 1.1636496068144413e-10][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -9.182773430538305e-10, 0.0][i]
+ΔQiny[2]: [0.0, -3.097681000596708e-9, 0.0][i]
+ΔPiny[3]: [0.0, -9.182773430538305e-10, 8.358425063192954e-10][i]
+ΔQiny[3]: [0.0, -3.097681000596708e-9, -1.1636496068144413e-10][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0627∠[0.0, -0.011459155902616466, 0.0][i]°
+Nodo 3: V = 1.0313∠[0.0, -0.011459155902616466, -0.544309905374282][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.39999999991757296 p.u.
+Qgen_slack: -0.9391973862494041 p.u.
+
+3. Pérdidas totales:
+P_totales: -8.242705129557493e-11 p.u.
+Q_totales: 0.5925839056758981 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.6267∠89.8172°
+I_2 = 0.6267∠-90.1828°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.0019999999999999996 - 0.6266999999999996im
+S_2 = -0.0019999999999999996 + 0.6659756889999996im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.3275∠72.5886°
+I_3 = 0.3275∠-107.4114°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.09799999999999998 - 0.3125im
+S_3 = -0.09799999999999998 + 0.323226025im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4671∠64.6780°
+I_3 = 3.0729∠10.5513°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9307271551582503 - 4.182782924472497im
+S_3 = 3.2101622898834696 - 0.5985645176407277im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.14088944504172
+Q_totales = -4.731345728113224
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.9627
+P inicial: 0.4 MW
+Q inicial: -0.94 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.4 MW
+Q ajustada: -0.94 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 1.0
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.99999999835146
+
+Actualizando partícula 4
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.0]
+Qgen: [0.0, 1.0, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 1.0, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+Δθ3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0666666666666667 θ2: -2.7007562852787717e-16
+U3: 1.0333333333333334 θ3: -0.010000000000000269
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0666666666666667 - 2.8808067042973564e-16im, 1.033281667097221 - 0.0103331611119725im]
+Piny_new[2]: [0.0, 0.11022038519437079, 0.0][i]
+Qiny_new[2]: [0.0, 1.0672177731851984, 0.0][i]
+Piny_new[3]: [0.0, 0.11022038519437079, -0.21355199631409238][i]
+Qiny_new[3]: [0.0, 1.0672177731851984, 0.0010677688796625045][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.01022038519437081, 0.0][i]
+ΔQiny[2]: [0.0, -0.06721777318519839, 0.0][i]
+ΔPiny[3]: [0.0, -0.01022038519437081, 0.013551996314092374][i]
+ΔQiny[3]: [0.0, -0.06721777318519839, -0.0010677688796625045][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+Δθ3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626888907393965 θ2: -0.00018918571369713752
+U3: 1.03129913560708 θ3: -0.009501958096482731
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626888717219232 - 0.00020104555503327402im, 1.0312525793977556 - 0.009799213712650169im]
+Piny_new[2]: [0.0, 0.10005141061820635, 0.0][i]
+Qiny_new[2]: [0.0, 1.0002387513105169, 0.0][i]
+Piny_new[3]: [0.0, 0.10005141061820635, -0.20005400329503553][i]
+Qiny_new[3]: [0.0, 1.0002387513105169, 6.246611814152489e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -5.141061820637671e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00023875131051687148, 0.0][i]
+ΔPiny[3]: [0.0, -5.141061820637671e-5, 5.4003295035520704e-5][i]
+ΔQiny[3]: [0.0, -0.00023875131051687148, -6.246611814152489e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626745910198325 θ2: -0.0001906259267498158
+U3: 1.0312917064781448 θ3: -0.009500293644350469
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626745717119683 - 0.00020257332751977722im, 1.0312451669129719 - 0.009797426664237198im]
+Piny_new[2]: [0.0, 0.10000000091827732, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000003097681, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000091827732, -0.20000000083584252][i]
+Qiny_new[3]: [0.0, 1.000000003097681, 1.1636496068144413e-10][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -9.182773430538305e-10, 0.0][i]
+ΔQiny[2]: [0.0, -3.097681000596708e-9, 0.0][i]
+ΔPiny[3]: [0.0, -9.182773430538305e-10, 8.358425063192954e-10][i]
+ΔQiny[3]: [0.0, -3.097681000596708e-9, -1.1636496068144413e-10][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0627∠[0.0, -0.011459155902616466, 0.0][i]°
+Nodo 3: V = 1.0313∠[0.0, -0.011459155902616466, -0.544309905374282][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.39999999991757296 p.u.
+Qgen_slack: -0.9391973862494041 p.u.
+
+3. Pérdidas totales:
+P_totales: -8.242705129557493e-11 p.u.
+Q_totales: 0.5925839056758981 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.6267∠89.8172°
+I_2 = 0.6267∠-90.1828°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.0019999999999999996 - 0.6266999999999996im
+S_2 = -0.0019999999999999996 + 0.6659756889999996im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.3275∠72.5886°
+I_3 = 0.3275∠-107.4114°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.09799999999999998 - 0.3125im
+S_3 = -0.09799999999999998 + 0.323226025im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4671∠64.6780°
+I_3 = 3.0729∠10.5513°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9307271551582503 - 4.182782924472497im
+S_3 = 3.2101622898834696 - 0.5985645176407277im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.14088944504172
+Q_totales = -4.731345728113224
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.8948
+P inicial: 0.4 MW
+Q inicial: -0.94 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.4 MW
+Q ajustada: -0.94 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 1.0
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.99999999835146
+
+Mejor fitness actual: 27.99999999835146
+Iteraciones sin mejora: 2
+
+=== Iteración 4 ===
+Inercia actual: 0.525
+
+Actualizando partícula 1
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.10347944198012443]
+Qgen: [0.0, 1.0, -0.2869407735983408]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.09652055801987558]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, -0.2869407735983408]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.09652055801987802][i]
+ΔQiny[3]: [0.0, 1.0, -0.2869407735983408][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [0.003449314732670551, -0.0031013705346586307, 0.05710197421338865, 0.014203948426777283][i-1]
+ΔV2: [0.003449314732670551, -0.0031013705346586307, 0.05710197421338865, 0.014203948426777283][i-1 + (nNodos-1)]
+Δθ3: [0.003449314732670551, -0.0031013705346586307, 0.05710197421338865, 0.014203948426777283][i-1]
+ΔV3: [0.003449314732670551, -0.0031013705346586307, 0.05710197421338865, 0.014203948426777283][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0571019742133887 θ2: 0.003449314732670551
+U3: 1.0142039484267773 θ3: -0.0031013705346586307
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0570956856404228 + 0.003646270183164039im, 1.014199070870757 - 0.0031454171994141247im]
+Piny_new[2]: [0.0, 0.10669320966112929, 0.0][i]
+Qiny_new[2]: [0.0, 1.0573948897421077, 0.0][i]
+Piny_new[3]: [0.0, 0.10669320966112929, -0.10168467982362313][i]
+Qiny_new[3]: [0.0, 1.0573948897421077, -0.2907376601888145][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.00669320966112931, 0.0][i]
+ΔQiny[2]: [0.0, -0.05739488974210771, 0.0][i]
+ΔPiny[3]: [0.0, -0.00669320966112931, 0.005164121803747548][i]
+ΔQiny[3]: [0.0, -0.05739488974210771, 0.0037968865904736693][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00024032600377192585, 0.00010640899136521175, -0.0032977286633735447, -0.0014812111746258017][i-1]
+ΔV2: [-0.00024032600377192585, 0.00010640899136521175, -0.0032977286633735447, -0.0014812111746258017][i-1 + (nNodos-1)]
+Δθ3: [-0.00024032600377192585, 0.00010640899136521175, -0.0032977286633735447, -0.0014812111746258017][i-1]
+ΔV3: [-0.00024032600377192585, 0.00010640899136521175, -0.0032977286633735447, -0.0014812111746258017][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0538042455500154 θ2: 0.0032089887288986245
+U3: 1.0127227372521515 θ3: -0.0029949615432934193
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0537988197228079 + 0.0033816401426274073im, 1.0127181952980533 - 0.003033061117761732im]
+Piny_new[2]: [0.0, 0.1000252487106117, 0.0][i]
+Qiny_new[2]: [0.0, 1.000169739599969, 0.0][i]
+Piny_new[3]: [0.0, 0.1000252487106117, -0.09653945846194924][i]
+Qiny_new[3]: [0.0, 1.000169739599969, -0.28694492398743027][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -2.524871061172773e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00016973959996890997, 0.0][i]
+ΔPiny[3]: [0.0, -2.524871061172773e-5, 1.890044207365771e-5][i]
+ΔQiny[3]: [0.0, -0.00016973959996890997, 4.150389089463413e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-9.432824386631191e-7, 3.7206808072216615e-7, -1.003372253635664e-5, -4.8751946791160674e-6][i-1]
+ΔV2: [-9.432824386631191e-7, 3.7206808072216615e-7, -1.003372253635664e-5, -4.8751946791160674e-6][i-1 + (nNodos-1)]
+Δθ3: [-9.432824386631191e-7, 3.7206808072216615e-7, -1.003372253635664e-5, -4.8751946791160674e-6][i-1]
+ΔV3: [-9.432824386631191e-7, 3.7206808072216615e-7, -1.003372253635664e-5, -4.8751946791160674e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.053794211827479 θ2: 0.003208045446459961
+U3: 1.0127178620574724 θ3: -0.002994589475212697
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0537887892412756 + 0.0033806139241226926im, 1.0127133212536688 - 0.0030326697184614292im]
+Piny_new[2]: [0.0, 0.10000000029883817, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000001539826, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000029883817, -0.09652055824222075][i]
+Qiny_new[3]: [0.0, 1.000000001539826, -0.2869407736009068][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -2.988381903046289e-10, 0.0][i]
+ΔQiny[2]: [0.0, -1.5398260444499101e-9, 0.0][i]
+ΔPiny[3]: [0.0, -2.988381903046289e-10, 2.2234517005337295e-10][i]
+ΔQiny[3]: [0.0, -1.5398260444499101e-9, 2.566002965664893e-12][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0538∠[0.0, 0.18334649444186346, 0.0][i]°
+Nodo 3: V = 1.0127∠[0.0, 0.18334649444186346, -0.17188733853924698][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.2965205579433902 p.u.
+Qgen_slack: -0.6650211049494423 p.u.
+
+3. Pérdidas totales:
+P_totales: -7.648535971238601e-11 p.u.
+Q_totales: 0.5608368555173457 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.539∠93.5956°
+I_2 = 0.539∠-86.4044°
+
+Potencias aparentes de la línea 1-2:
+S_1 = -0.0338 - 0.5379000000000005im
+S_2 = 0.0338 + 0.5669478850000006im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.1307∠76.5913°
+I_3 = 0.1307∠-103.4087°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.030299999999999997 - 0.12710000000000043im
+S_3 = -0.030299999999999994 + 0.12880725000000043im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4935∠65.2324°
+I_3 = 2.9985∠8.9913°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.8940521176924998 - 4.137695786024999im
+S_3 = 3.1225467183885502 - 0.4838136998644486im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.01659883608105
+Q_totales = -4.590754350889448
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.5341
+P inicial: 0.3 MW
+Q inicial: -0.67 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.3 MW
+Q ajustada: -0.67 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 1.0
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.3852
+P inicial: 0.1 MW
+Q inicial: -0.29 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.1 MW
+Q ajustada: -0.29 MVAr
+Estado: Encendido
+fitValue: 32.13917767767527
+
+Actualizando partícula 2
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.4896505293230471, 0.0]
+Qgen: [0.0, 0.9482526466152357, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.08965052932304707, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 0.9482526466152357, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.08965052932304463, 0.0][i]
+ΔQiny[2]: [0.0, 0.9482526466152357, 0.0][i]
+ΔPiny[3]: [0.0, 0.08965052932304463, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 0.9482526466152357, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.0006899647117971296, -0.010344982355898698, 0.0632168431076824, 0.0316084215538412][i-1]
+ΔV2: [-0.0006899647117971296, -0.010344982355898698, 0.0632168431076824, 0.0316084215538412][i-1 + (nNodos-1)]
+Δθ3: [-0.0006899647117971296, -0.010344982355898698, 0.0632168431076824, 0.0316084215538412][i-1]
+ΔV3: [-0.0006899647117971296, -0.010344982355898698, 0.0632168431076824, 0.0316084215538412][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0632168431076825 θ2: -0.0006899647117971296
+U3: 1.0316084215538412 θ3: -0.010344982355898698
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0632165900348105 - 0.0007335820445288616im, 1.0315532213707006 - 0.010671780570185087im]
+Piny_new[2]: [0.0, 0.09856103181729875, 0.0][i]
+Qiny_new[2]: [0.0, 1.008711938091322, 0.0][i]
+Piny_new[3]: [0.0, 0.09856103181729875, -0.2126146579644327][i]
+Qiny_new[3]: [0.0, 1.008711938091322, 0.00106322379125306][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.008910502494251682, 0.0][i]
+ΔQiny[2]: [0.0, -0.06045929147608642, 0.0][i]
+ΔPiny[3]: [0.0, -0.008910502494251682, 0.012614657964432702][i]
+ΔQiny[3]: [0.0, -0.06045929147608642, -0.00106322379125306][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00014217439560835286, 0.0004846905998552542, -0.003602902334406139, -0.0018470828025599203][i-1]
+ΔV2: [-0.00014217439560835286, 0.0004846905998552542, -0.003602902334406139, -0.0018470828025599203][i-1 + (nNodos-1)]
+Δθ3: [-0.00014217439560835286, 0.0004846905998552542, -0.003602902334406139, -0.0018470828025599203][i-1]
+ΔV3: [-0.00014217439560835286, 0.0004846905998552542, -0.003602902334406139, -0.0018470828025599203][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0596139407732763 θ2: -0.0008321391074054826
+U3: 1.0297613387512814 θ3: -0.009860291756043445
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.05961357390555 - 0.000881746097107817im, 1.0297112797017698 - 0.010153582706370557im]
+Piny_new[2]: [0.0, 0.0896918406031038, 0.0][i]
+Qiny_new[2]: [0.0, 0.9484483099902171, 0.0][i]
+Piny_new[3]: [0.0, 0.0896918406031038, -0.20004512863788368][i]
+Qiny_new[3]: [0.0, 0.9484483099902171, 5.478143199531366e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -4.1311280056730015e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00019566337498144737, 0.0][i]
+ΔPiny[3]: [0.0, -4.1311280056730015e-5, 4.5128637883667944e-5][i]
+ΔQiny[3]: [0.0, -0.00019566337498144737, -5.478143199531366e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.1127542794053714e-6, 1.4474263155071167e-6, -1.1794946976211522e-5, -6.143840931842485e-6][i-1]
+ΔV2: [-1.1127542794053714e-6, 1.4474263155071167e-6, -1.1794946976211522e-5, -6.143840931842485e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.1127542794053714e-6, 1.4474263155071167e-6, -1.1794946976211522e-5, -6.143840931842485e-6][i-1]
+ΔV3: [-1.1127542794053714e-6, 1.4474263155071167e-6, -1.1794946976211522e-5, -6.143840931842485e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0596021458263 θ2: -0.000833251861684888
+U3: 1.0297551949103496 θ3: -0.009858844329727936
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0596017779808458 - 0.0008829153584857611im, 1.0297051508549007 - 0.010152031704966188im]
+Piny_new[2]: [0.0, 0.0896505299381296, 0.0][i]
+Qiny_new[2]: [0.0, 0.948252648719539, 0.0][i]
+Piny_new[3]: [0.0, 0.0896505299381296, -0.20000000057264314][i]
+Qiny_new[3]: [0.0, 0.948252648719539, 8.204384727527093e-11][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -6.1508252657827e-10, 0.0][i]
+ΔQiny[2]: [0.0, -2.1043032871759237e-9, 0.0][i]
+ΔPiny[3]: [0.0, -6.1508252657827e-10, 5.72643127361161e-10][i]
+ΔQiny[3]: [0.0, -2.1043032871759237e-9, -8.204384727527093e-11][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0596∠[0.0, -0.045836623610465865, 0.0][i]°
+Nodo 3: V = 1.0298∠[0.0, -0.045836623610465865, -0.5672282171795151][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.4103494706345213 p.u.
+Qgen_slack: -0.8930692883574647 p.u.
+
+3. Pérdidas totales:
+P_totales: -4.243161377814886e-11 p.u.
+Q_totales: 0.5853812389801972 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.5961∠89.1541°
+I_2 = 0.5961∠-90.8459°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.008799999999999999 - 0.5960000000000001im
+S_2 = -0.008799999999999999 + 0.6315293440000002im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.314∠71.1380°
+I_3 = 0.314∠-108.8620°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.10149999999999998 - 0.2970999999999986im
+S_3 = -0.10149999999999998 + 0.3069570659999985im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4483∠64.5403°
+I_3 = 3.0639∠10.7898°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9282654750245796 - 4.155051723251398im
+S_3 = 3.1886408533491206 - 0.6104242339340754im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.1169063283737
+Q_totales = -4.720089547185474
+
+Información de Generadores: ##############SOLUCION############# 
+Misma solución que con la resolución no lineal. 
+Menor número de iteraciones que en el ejemplo anterior. 
+----------------------------
+
+Generador 1:
+Estado u: 0.8851
+P inicial: 0.41 MW
+Q inicial: -0.89 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.41 MW
+Q ajustada: -0.89 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 0.8793
+P inicial: 0.49 MW
+Q inicial: 0.95 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.49 MW
+Q ajustada: 0.95 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.793010585612308
+
+Actualizando partícula 3
+fitValue: Inf
+
+Actualizando partícula 4
+
+Comprobación de potencias generadas y demandadas:
+Pd: [0.3, 0.4, 0.2]
+Qd: [0.0, 0.0, 0.0]
+Pgen: [0.0, 0.5, 0.0]
+Qgen: [0.0, 1.0, 0.0]
+
+Potencias activas inyectadas:
+Piny: [-0.3, 0.09999999999999998, -0.2]
+
+Potencias reactivas inyectadas:
+Qiny: [0.0, 1.0, 0.0]
+
+====Iteración: 1 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0 + 0.0im, 1.0 + 0.0im]
+Piny_new[2]: [0.0, 2.449293598294706e-15, 0.0][i]
+Qiny_new[2]: [0.0, 0.0, 0.0][i]
+Piny_new[3]: [0.0, 2.449293598294706e-15, 2.449293598294706e-15][i]
+Qiny_new[3]: [0.0, 0.0, 0.0][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, 0.09999999999999754, 0.0][i]
+ΔQiny[2]: [0.0, 1.0, 0.0][i]
+ΔPiny[3]: [0.0, 0.09999999999999754, -0.20000000000000245][i]
+ΔQiny[3]: [0.0, 1.0, 0.0][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV2: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+Δθ3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1]
+ΔV3: [-2.7007562852787717e-16, -0.010000000000000269, 0.06666666666666668, 0.03333333333333334][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0666666666666667 θ2: -2.7007562852787717e-16
+U3: 1.0333333333333334 θ3: -0.010000000000000269
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 2 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0666666666666667 - 2.8808067042973564e-16im, 1.033281667097221 - 0.0103331611119725im]
+Piny_new[2]: [0.0, 0.11022038519437079, 0.0][i]
+Qiny_new[2]: [0.0, 1.0672177731851984, 0.0][i]
+Piny_new[3]: [0.0, 0.11022038519437079, -0.21355199631409238][i]
+Qiny_new[3]: [0.0, 1.0672177731851984, 0.0010677688796625045][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -0.01022038519437081, 0.0][i]
+ΔQiny[2]: [0.0, -0.06721777318519839, 0.0][i]
+ΔPiny[3]: [0.0, -0.01022038519437081, 0.013551996314092374][i]
+ΔQiny[3]: [0.0, -0.06721777318519839, -0.0010677688796625045][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV2: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+Δθ3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1]
+ΔV3: [-0.00018918571369686745, 0.0004980419035175383, -0.003977775927270133, -0.002034197726253368][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626888907393965 θ2: -0.00018918571369713752
+U3: 1.03129913560708 θ3: -0.009501958096482731
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 3 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626888717219232 - 0.00020104555503327402im, 1.0312525793977556 - 0.009799213712650169im]
+Piny_new[2]: [0.0, 0.10005141061820635, 0.0][i]
+Qiny_new[2]: [0.0, 1.0002387513105169, 0.0][i]
+Piny_new[3]: [0.0, 0.10005141061820635, -0.20005400329503553][i]
+Qiny_new[3]: [0.0, 1.0002387513105169, 6.246611814152489e-6][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -5.141061820637671e-5, 0.0][i]
+ΔQiny[2]: [0.0, -0.00023875131051687148, 0.0][i]
+ΔPiny[3]: [0.0, -5.141061820637671e-5, 5.4003295035520704e-5][i]
+ΔQiny[3]: [0.0, -0.00023875131051687148, -6.246611814152489e-6][i]
+
+Jacobiano:
+
+Desbalances de ángulos y tensiones (vector columna):
+Δθ2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV2: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+Δθ3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1]
+ΔV3: [-1.4402130526782897e-6, 1.6644521322610294e-6, -1.4299719563915496e-5, -7.429128935039928e-6][i-1 + (nNodos-1)]
+
+Tensiones actualizadas (módulos y ángulos):
+U2: 1.0626745910198325 θ2: -0.0001906259267498158
+U3: 1.0312917064781448 θ3: -0.009500293644350469
+
+Tensiones actualizadas (números complejos):
+
+====Iteración: 4 ====
+
+
+Potencias inyectadas calculadas:
+U: ComplexF64[1.0 + 0.0im, 1.0626745717119683 - 0.00020257332751977722im, 1.0312451669129719 - 0.009797426664237198im]
+Piny_new[2]: [0.0, 0.10000000091827732, 0.0][i]
+Qiny_new[2]: [0.0, 1.000000003097681, 0.0][i]
+Piny_new[3]: [0.0, 0.10000000091827732, -0.20000000083584252][i]
+Qiny_new[3]: [0.0, 1.000000003097681, 1.1636496068144413e-10][i]
+
+Desbalances de potencias:
+ΔPiny[2]: [0.0, -9.182773430538305e-10, 0.0][i]
+ΔQiny[2]: [0.0, -3.097681000596708e-9, 0.0][i]
+ΔPiny[3]: [0.0, -9.182773430538305e-10, 8.358425063192954e-10][i]
+ΔQiny[3]: [0.0, -3.097681000596708e-9, -1.1636496068144413e-10][i]
+
+¡Convergencia alcanzada!
+
+****Resultados finales****
+
+1. Tensiones finales:
+Nodo 1: V = 1.0∠[0.0, 0.0, 0.0][i]°
+Nodo 2: V = 1.0627∠[0.0, -0.011459155902616466, 0.0][i]°
+Nodo 3: V = 1.0313∠[0.0, -0.011459155902616466, -0.544309905374282][i]°
+
+2. Potencias generadas por el slack:
+Pgen_slack: 0.39999999991757296 p.u.
+Qgen_slack: -0.9391973862494041 p.u.
+
+3. Pérdidas totales:
+P_totales: -8.242705129557493e-11 p.u.
+Q_totales: 0.5925839056758981 p.u.
+
+Violaciones de tensión: 0.0
+
+Tensiones de la línea 1-2:
+
+Corrientes de la línea 1-2:
+I_1 = 0.6267∠89.8172°
+I_2 = 0.6267∠-90.1828°
+
+Potencias aparentes de la línea 1-2:
+S_1 = 0.0019999999999999996 - 0.6266999999999996im
+S_2 = -0.0019999999999999996 + 0.6659756889999996im
+
+Violación de flujo en la línea 1-2: 0.0
+
+Tensiones de la línea 1-3:
+
+Corrientes de la línea 1-3:
+I_1 = 0.3275∠72.5886°
+I_3 = 0.3275∠-107.4114°
+
+Potencias aparentes de la línea 1-3:
+S_1 = 0.09799999999999998 - 0.3125im
+S_3 = -0.09799999999999998 + 0.323226025im
+
+Violación de flujo en la línea 1-3: 0.0
+
+Tensiones de la línea 2-3:
+
+Corrientes de la línea 2-3:
+I_2 = 4.4671∠64.6780°
+I_3 = 3.0729∠10.5513°
+
+Potencias aparentes de la línea 2-3:
+S_2 = 1.9307271551582503 - 4.182782924472497im
+S_3 = 3.2101622898834696 - 0.5985645176407277im
+
+Violación de flujo en la línea 2-3: 0.0
+
+Pérdidas totales:
+P_totales = 5.14088944504172
+Q_totales = -4.731345728113224
+
+Información de Generadores:
+----------------------------
+
+Generador 1:
+Estado u: 0.9026
+P inicial: 0.4 MW
+Q inicial: -0.94 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.4 MW
+Q ajustada: -0.94 MVAr
+Estado: Encendido
+
+Generador 2:
+Estado u: 1.0
+P inicial: 0.5 MW
+Q inicial: 1.0 MVAr
+Límites P: [10, 50] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.5 MW
+Q ajustada: 1.0 MVAr
+Estado: Encendido
+
+Generador 3:
+Estado u: 0.0
+P inicial: 0.0 MW
+Q inicial: 0.0 MVAr
+Límites P: [5, 20] MW
+Límites Q: [-100, 100] MVAr
+P ajustada: 0.0 MW
+Q ajustada: 0.0 MVAr
+Estado: Apagado
+fitValue: 27.99999999835146
+
+Mejora encontrada: 0.2069894127391514
+
+Mejor fitness actual: 27.793010585612308
+Iteraciones sin mejora: 0
