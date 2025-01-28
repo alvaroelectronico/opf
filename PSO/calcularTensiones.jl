@@ -17,6 +17,7 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
     Qd = datosNodo.QD/bMVA
 
     # Las potencias generadas del slack son 0 inicialmente
+    # Pgen = vcat(0.0, Pgen)
     Pgen[1] = 0.0
     Qgen[1] = 0.0
 
@@ -31,9 +32,20 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
     log_to_file(log_file, "Pgen: $Pgen", log_enabled)
     log_to_file(log_file, "Qgen: $Qgen", log_enabled)
 
-    # Calcular las potencias inyectadas
-    Piny = Pgen - Pd
-    Qiny = Qgen - Qd
+    # Crear vectores de inyección del tamaño correcto (nNodos)
+    Piny = zeros(nNodos)
+    Qiny = zeros(nNodos)
+
+    # Asignar potencias generadas a los nodos correspondientes
+    for i in eachindex(Pgen)
+        nodo = datosGenerador.BUS[i]
+        Piny[nodo] = Pgen[i]
+        Qiny[nodo] = Qgen[i]
+    end
+
+    # Restar las demandas
+    Piny = Piny - Pd
+    Qiny = Qiny - Qd
     log_to_file(log_file, "\nPotencias activas inyectadas:", log_enabled)
     log_to_file(log_file, "Piny: $Piny", log_enabled)
     log_to_file(log_file, "\nPotencias reactivas inyectadas:", log_enabled)

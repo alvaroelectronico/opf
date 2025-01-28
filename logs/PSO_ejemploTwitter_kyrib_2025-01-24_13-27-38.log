@@ -3800,6 +3800,8 @@ encendidos. Para ese caso, quizás interesa que las violaciones no sean infinita
 encontrar la combinacion de potencias que me de el mejor fitness aunque estén todos encendidos. 
 También he cambiado la capacidad máxima de potencia activa del slack, porque debe ser un
 generador grande. 
+Además, vemos que en todos los logs de este caso sale la misma P y la misma Q ya que solo hay
+un generador encendido que debe cubrir toda la demanda. 
 ----------------------------
 
 Generador 1:

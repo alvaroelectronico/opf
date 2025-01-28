@@ -258,13 +258,21 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
     log_to_file(log_file, "\nIniciando PSO híbrido", log_enabled)
     mejor_fitness_historico = Inf
     iteraciones_sin_mejora = 0
+    ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
+    tiempo_inicio = time()
+    tiempo_limite = 60.0  # 1 minuto en segundos
     
     # Extraer tipo_codificacion del tuple datos
     tipo_codificacion = s.datos[9]
     
-    for i in 1:s.nInter
-        log_to_file(log_file, "\n=== Iteración $i ===", log_enabled)
-        log_to_file(log_file, "Inercia actual: $(s.w)", log_enabled)
+    ## for i in 1:s.nInter
+        ##log_to_file(log_file, "\n=== Iteración $i ===", log_enabled)
+        ##log_to_file(log_file, "Inercia actual: $(s.w)", log_enabled)
+        
+    ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
+    while (time() - tiempo_inicio) < tiempo_limite
+        log_to_file(log_file, "\n=========== Iteración $s.nIter ==============", log_enabled)
+        log_to_file(log_file, "Tiempo transcurrido: $(round(time() - tiempo_inicio, digits=2)) segundos", log_enabled)
         
         for (j, p) in enumerate(s.particles)
             log_to_file(log_file, "\nActualizando partícula $j", log_enabled)
@@ -297,8 +305,8 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
 end
 
 # Función que corresponde a la fitFunc, evalúa la partícula
-function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOStream, Nothing}=nothing, log_enabled::Bool=false)
-    # Desempaquetar datos
+function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOStream, Nothing}, log_enabled::Bool)
+    # Desempaquetar datos correctamente
     datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, _, caso_estudio, tipo_codificacion = datos
     
     # Calcular matriz de admitancias y valores relacionados
