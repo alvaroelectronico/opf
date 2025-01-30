@@ -46,24 +46,24 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
     # Restar las demandas
     Piny = Piny - Pd
     Qiny = Qiny - Qd
-    log_to_file(log_file, "\nPotencias activas inyectadas:", log_enabled)
+    log_to_file(log_file, "\nPotencias activas inyectadas reales:", log_enabled)
     log_to_file(log_file, "Piny: $Piny", log_enabled)
     log_to_file(log_file, "\nPotencias reactivas inyectadas:", log_enabled)
     log_to_file(log_file, "Qiny: $Qiny", log_enabled)
 
     for iter in 1:nIter 
-        log_to_file(log_file, "\n====Iteración: $iter ====\n", log_enabled)
+        log_to_file(log_file, "\n====Iteración Newton-Raphson: $iter ====\n", log_enabled)
         # Calcular las nuevas potencias inyectadas
-        log_to_file(log_file, "\nPotencias inyectadas calculadas:", log_enabled)
+        log_to_file(log_file, "\nPotencias inyectadas calculadas con las tensiones actuales:", log_enabled)
         Piny_new = zeros(Float64, nNodos)
         Qiny_new = zeros(Float64, nNodos)
         log_to_file(log_file, "U: $U", log_enabled)
         for i in 2:nNodos # Excluyo el cálculo del slack
             Piny_new[i] = abs(U[i]) * sum(abs(U[j]) * abs(Y[i, j]) * cos(angle(U[i]) - angle(U[j]) - angle(Y[i, j])) for j in 1:nNodos)
             Qiny_new[i] = abs(U[i]) * sum(abs(U[j]) * abs(Y[i, j]) * sin(angle(U[i]) - angle(U[j]) - angle(Y[i, j])) for j in 1:nNodos)
-            log_to_file(log_file, "Piny_new[$i]: $Piny_new[i]", log_enabled)
-            log_to_file(log_file, "Qiny_new[$i]: $Qiny_new[i]", log_enabled)
         end
+        log_to_file(log_file, "Piny_new: $Piny_new", log_enabled)
+        log_to_file(log_file, "Qiny_new: $Qiny_new", log_enabled)
 
         # Calcular los desbalances de potencias inyectadas
         ΔPiny = zeros(Float64, nNodos)
@@ -72,13 +72,13 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
         for i in 2:nNodos # Excluyo el cálculo del slack
             ΔPiny[i] = Piny[i] - Piny_new[i]
             ΔQiny[i] = Qiny[i] - Qiny_new[i]
-            log_to_file(log_file, "ΔPiny[$i]: $ΔPiny[i]", log_enabled)
-            log_to_file(log_file, "ΔQiny[$i]: $ΔQiny[i]", log_enabled)
         end
+        log_to_file(log_file, "ΔPiny: $ΔPiny", log_enabled)
+        log_to_file(log_file, "ΔQiny: $ΔQiny", log_enabled)
 
         # Comprobar si ha convergido
         max_desbalance = maximum(abs.(vcat(ΔPiny, ΔQiny)))
-        println("\nMáximo desbalance: ", max_desbalance)
+        # println("\nMáximo desbalance: ", max_desbalance)
 
         if max_desbalance < tol
             log_to_file(log_file, "\n¡Convergencia alcanzada!", log_enabled)
@@ -87,7 +87,7 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
             log_to_file(log_file, "\n1. Tensiones finales:", log_enabled)
             for i in 1:nNodos
                 angulo[i] = round(angle(U[i]), digits = 4)*180/pi
-                log_to_file(log_file, "Nodo $i: V = $(round(abs(U[i]), digits=4))∠$angulo[i]°", log_enabled)
+                log_to_file(log_file, "Nodo $i: V = $(round(abs(U[i]), digits=4))∠$(round(angulo[i], digits=4))°", log_enabled)
             end
             
             # Calcular potencias generadas por el slack
@@ -163,19 +163,20 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
                 end
             end
         end
-        log_to_file(log_file, "\nJacobiano:", log_enabled)
-        display(J)
+        # log_to_file(log_file, "\nJacobiano:", log_enabled)
+        # display(J)
 
         # Resolver el sistema de ecuaciones: J * Δx = [ΔP]
         #                                             [ΔQ]
         ΔPQ = vcat(ΔPiny[2:end], ΔQiny[2:end]) # Función que crea un vector columna, excluyendo el slack
         Δx = J \ ΔPQ
         log_to_file(log_file, "\nDesbalances de ángulos y tensiones (vector columna):", log_enabled)
-        # Para un sistema de n nodos (excluyendo el slack)
-        for i in 2:nNodos
-            log_to_file(log_file, "Δθ$i: $Δx[i-1]", log_enabled)
-            log_to_file(log_file, "ΔV$i: $Δx[i-1 + (nNodos-1)]", log_enabled)
-        end
+        
+        # Mostrar vectores completos de desbalances
+        Δθ = Δx[1:nNodos-1]
+        ΔV = Δx[nNodos:end]
+        log_to_file(log_file, "Δθ: $(round.(Δθ, digits=4))", log_enabled)
+        log_to_file(log_file, "ΔV: $(round.(ΔV, digits=4))", log_enabled)
 
         # Actualizar los ángulos y tensiones
         log_to_file(log_file, "\nTensiones actualizadas (módulos y ángulos):", log_enabled)
@@ -183,10 +184,10 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
             θi = angle(U[i]) + Δx[i-1]
             Ui = abs(U[i]) + Δx[i-1 + (nNodos - 1)]
             U[i] = Ui * exp(θi*im)
-            log_to_file(log_file, "U$i: $Ui θ$i: $θi", log_enabled)
+            # log_to_file(log_file, "U$i: $Ui θ$i: $θi", log_enabled)
         end
-        log_to_file(log_file, "\nTensiones actualizadas (números complejos):", log_enabled)
-        display(U)
+        # log_to_file(log_file, "\nTensiones actualizadas (números complejos):", log_enabled)
+        # display(U)
     end
     if nIter == 100
         log_to_file(log_file, "\n¡No se ha alcanzado la convergencia!", log_enabled)
