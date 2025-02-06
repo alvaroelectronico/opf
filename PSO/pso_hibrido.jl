@@ -265,13 +265,15 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
     # Extraer tipo_codificacion del tuple datos
     tipo_codificacion = s.datos[9]
     
+    iteraciones = 1
+    
     ## for i in 1:s.nInter
         ##log_to_file(log_file, "\n=== Iteración $i ===", log_enabled)
         ##log_to_file(log_file, "Inercia actual: $(s.w)", log_enabled)
         
     ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
     while (time() - tiempo_inicio) < tiempo_limite
-        log_to_file(log_file, "\n=========== Iteración $s.nIter ==============", log_enabled)
+        log_to_file(log_file, "\n=========== Iteración $iteraciones ==============", log_enabled)
         log_to_file(log_file, "Tiempo transcurrido: $(round(time() - tiempo_inicio, digits=2)) segundos", log_enabled)
         
         for (j, p) in enumerate(s.particles)
@@ -288,8 +290,10 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
             log_to_file(log_file, "\nMejora encontrada: $mejora", log_enabled)
             mejor_fitness_historico = s.fitgBest
             iteraciones_sin_mejora = 0
+            iteraciones += 1
         else
             iteraciones_sin_mejora += 1
+            iteraciones += 1
         end
         
         updateInertia!(s)
@@ -364,10 +368,10 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     coste = 0.0
     for i in 1:p.nGeneradores
         if estados_activos[i]
-            coste += datosGenerador.P_COSTE1[i] * potencias_P[i]
+            coste += datosGenerador.P_COSTE0[i] + datosGenerador.P_COSTE1[i] * potencias_P[i] + datosGenerador.P_COSTE2[i] * potencias_P[i]^2
         end
     end
-    
+
     # Penalización por violaciones de tensión Y flujo
     coste_total = coste + 1000 * violaciones_tension + 1000 * violaciones_flujo
     
@@ -441,7 +445,7 @@ function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::B
     
     nGeneradores = size(datos[2], 1)
     log_to_file(log_file, "Iniciando PSO Híbrido con modo $tipo_codificacion", log_enabled)
-    log_to_file(log_file, "$nParticle partículas y $nInter iteraciones", log_enabled)
+    #log_to_file(log_file, "$nParticle partículas y $nInter iteraciones", log_enabled)
     
     # Crear enjambre
     swarm = SwarmHibrido(evaluarParticula, nGeneradores, datos, 
