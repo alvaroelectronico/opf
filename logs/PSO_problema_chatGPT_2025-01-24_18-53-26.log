@@ -165,7 +165,8 @@ P_totales = 4.46402609139923
 Q_totales = -4.298707555843365
 
 Información de Generadores: ##############SOLUCION############# 
-Con cod_Potencia también da la solución correcta. 
+Con cod_Potencia también da la solución correcta de estados únicamente. Todavía no se ha probado
+el tiempo de ejecución límite. 
 ----------------------------
 
 Generador 1:

@@ -3,7 +3,7 @@ using CSV
 using LinearAlgebra
 using Printf
 
-include("./calcularAdmitancias.jl")
+include("./PSO/calcularAdmitancias.jl")
 
 ## Función que calcula las tensiones usando el método de Newton-Raphson
 function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame, 
@@ -11,7 +11,7 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame,
     
     # Fijar los datos de las iteraciones
     tol = 1e-4
-    nIter = 100
+    nIter = 500
 
     # Calcular número de nodos 
     nNodos = nrow(datosNodo)
@@ -155,116 +155,116 @@ function NewtonRaphson_Tensiones(datosLinea:: DataFrame, datosNodo:: DataFrame,
         println("\nTensiones actualizadas (números complejos):")
         display(U)
     end
-    if nIter == 100
+    if nIter == 500
         println("\n¡No se ha alcanzado la convergencia!")
     end
 end
 
 ## Función que calcula los flujos de potencia en cada línea
-function calcularFlujos(datosLinea::DataFrame,  y_series::Vector{ComplexF64}, y_shunt::Vector{ComplexF64}, U::Vector{ComplexF64})
+# function calcularFlujos(datosLinea::DataFrame,  y_series::Vector{ComplexF64}, y_shunt::Vector{ComplexF64}, U::Vector{ComplexF64})
     
     # Calcular número de líneas
-    nLineas = nrow(datosLinea)
+#    nLineas = nrow(datosLinea)
 
     # Inicializar violaciones de flujo
-    violaciones_flujo = 0.0
+#    violaciones_flujo = 0.0
 
     # Inicializar matriz de admitancias de las líneas
-    Y_lineas = Vector{Matrix{ComplexF64}}(undef, nLineas)
+    # Y_lineas = Vector{Matrix{ComplexF64}}(undef, nLineas)
     
     # Crear la matriz de admitancias de las líneas
-    for i in 1:nLineas
+    # for i in 1:nLineas
         # Inicializar matriz 2x2 para la línea i
-        Y_lineas[i] = zeros(ComplexF64, 2, 2)
-        if i == 3 # TO DO: esto es una solución temporal, hay que dejar solo el else
-            Y_lineas[i][1, 1] = 1.9113 - 6.3710im
-            Y_lineas[i][1, 2] = -y_series[i]
-            Y_lineas[i][2, 1] = -y_series[i]
-            Y_lineas[i][2, 2] = 2.7523 - 9.1743im
-        else
-            Y_lineas[i][1, 1] = y_series[i] + y_shunt[i]
-            Y_lineas[i][1, 2] = -y_series[i]
-            Y_lineas[i][2, 1] = -y_series[i]
-            Y_lineas[i][2, 2] = y_series[i] + y_shunt[i]
-        end  
+        # Y_lineas[i] = zeros(ComplexF64, 2, 2)
+        # if i == 3 # TO DO: esto es una solución temporal, hay que dejar solo el else
+        # Y_lineas[i][1, 1] = 1.9113 - 6.3710im
+        # Y_lineas[i][1, 2] = -y_series[i]
+        # Y_lineas[i][2, 1] = -y_series[i]
+        # Y_lineas[i][2, 2] = 2.7523 - 9.1743im
+        # else
+        # Y_lineas[i][1, 1] = y_series[i] + y_shunt[i]
+        # Y_lineas[i][1, 2] = -y_series[i]
+        # Y_lineas[i][2, 1] = -y_series[i]
+        # Y_lineas[i][2, 2] = y_series[i] + y_shunt[i]
+        # end  
         # println("\nMatriz Y de la línea $from-$to:")
         # display(Y_lineas[i])
-    end
+    # end
 
     # Inicializar vectores para los flujos de corriente, potencias aparentes, 
     # activas, reactivas y pérdidas
-    I_lineas = Vector{Vector{ComplexF64}}(undef, nLineas)
-    S_lineas = Vector{Vector{ComplexF64}}(undef, nLineas)
-    P_lineas = Vector{Vector{Float64}}(undef, nLineas)
-    Q_lineas = Vector{Vector{Float64}}(undef, nLineas)  
-    P_perdidas = Vector{Float64}(undef, nLineas)
-    Q_perdidas = Vector{Float64}(undef, nLineas)
+    # I_lineas = Vector{Vector{ComplexF64}}(undef, nLineas)
+    # S_lineas = Vector{Vector{ComplexF64}}(undef, nLineas)
+    # P_lineas = Vector{Vector{Float64}}(undef, nLineas)
+    # Q_lineas = Vector{Vector{Float64}}(undef, nLineas)  
+    # P_perdidas = Vector{Float64}(undef, nLineas)
+    # Q_perdidas = Vector{Float64}(undef, nLineas)
 
     # Calcular flujos de potencia en cada línea
-    for i in 1:nLineas
+    # for i in 1:nLineas
         # Obtener los nodos de la línea
-        from = datosLinea.F_BUS[i]
-        to = datosLinea.T_BUS[i]
+        # from = datosLinea.F_BUS[i]
+        # to = datosLinea.T_BUS[i]
 
         # Vector de tensiones de los nodos de la línea
-        if i == 3 # TO DO: esto es una solución temporal, hay que dejar solo el else
-            U_nodos = [round(U[to], digits = 5), round(U[from], digits = 5)]
-            println("\nTensiones de la línea $from-$to:")
-            display(U_nodos)
-        else
-            U_nodos = [round(U[from], digits = 5), round(U[to], digits = 5)]
-            println("\nTensiones de la línea $from-$to:")
-            display(U_nodos)
-        end
+        # if i == 3 # TO DO: esto es una solución temporal, hay que dejar solo el else
+        # U_nodos = [round(U[to], digits = 5), round(U[from], digits = 5)]
+        # println("\nTensiones de la línea $from-$to:")
+        # display(U_nodos)
+        # else
+        # U_nodos = [round(U[from], digits = 5), round(U[to], digits = 5)]
+        # println("\nTensiones de la línea $from-$to:")
+        # display(U_nodos)
+        # end
         
         # Calcular corrientes
-        I_lineas[i] = Y_lineas[i] * U_nodos
+        # I_lineas[i] = Y_lineas[i] * U_nodos
         
-        println("\nCorrientes de la línea $from-$to:")
-        println("I_$from = ", round(abs(I_lineas[i][1]), digits=4), "∠", @sprintf("%.4f", angle(I_lineas[i][1])*180/π), "°")
-        println("I_$to = ", round(abs(I_lineas[i][2]), digits=4), "∠", @sprintf("%.4f", angle(I_lineas[i][2])*180/π), "°")
+        # println("\nCorrientes de la línea $from-$to:")
+        # println("I_$from = ", round(abs(I_lineas[i][1]), digits=4), "∠", @sprintf("%.4f", angle(I_lineas[i][1])*180/π), "°")
+        # println("I_$to = ", round(abs(I_lineas[i][2]), digits=4), "∠", @sprintf("%.4f", angle(I_lineas[i][2])*180/π), "°")
 
         # Calcular potencias aparentes
-        S_lineas[i] = [U_nodos[1] * conj(I_lineas[i][1]), U_nodos[2] * conj(I_lineas[i][2])]
-        println("\nPotencias aparentes de la línea $from-$to:")
-        println("S_$from = ", S_lineas[i][1])
-        println("S_$to = ", S_lineas[i][2])
+        # S_lineas[i] = [U_nodos[1] * conj(I_lineas[i][1]), U_nodos[2] * conj(I_lineas[i][2])]
+        # println("\nPotencias aparentes de la línea $from-$to:")
+        # println("S_$from = ", S_lineas[i][1])
+        # println("S_$to = ", S_lineas[i][2])
 
         # Asignar potencias activas y reactivas a las líneas
-        P_lineas[i] = [real(S_lineas[i][1]), real(S_lineas[i][2])]
-        Q_lineas[i] = [imag(S_lineas[i][1]), imag(S_lineas[i][2])]
+        # P_lineas[i] = [real(S_lineas[i][1]), real(S_lineas[i][2])]
+        # Q_lineas[i] = [imag(S_lineas[i][1]), imag(S_lineas[i][2])]
 
         # Cálcular las pérdidas en cada línea
-        P_perdidas[i] = P_lineas[i][1] + P_lineas[i][2]
-        Q_perdidas[i] = Q_lineas[i][1] + Q_lineas[i][2]
+        # P_perdidas[i] = P_lineas[i][1] + P_lineas[i][2]
+        # Q_perdidas[i] = Q_lineas[i][1] + Q_lineas[i][2]
 
         # Calcular las violaciones de flujo
-        S_max_sq = (datosLinea.L_SMAX[i] / bMVA)^2
-        S_ij_sq = real(S_lineas[i][1])^2 + imag(S_lineas[i][1])^2
-        S_ji_sq = real(S_lineas[i][2])^2 + imag(S_lineas[i][2])^2
-        if S_ij_sq > S_max_sq
-            violaciones_flujo += Inf
-        end
-        if S_ji_sq > S_max_sq
-            violaciones_flujo += Inf
-        end
-        println("\nViolación de flujo en la línea $from-$to:", violaciones_flujo)
-        return violaciones_flujo
-    end
+        # S_max_sq = (datosLinea.L_SMAX[i] / bMVA)^2
+        # S_ij_sq = real(S_lineas[i][1])^2 + imag(S_lineas[i][1])^2
+        # S_ji_sq = real(S_lineas[i][2])^2 + imag(S_lineas[i][2])^2
+        # if S_ij_sq > S_max_sq
+        # violaciones_flujo += Inf
+        # end
+        # if S_ji_sq > S_max_sq
+        # violaciones_flujo += Inf
+        # end
+        # println("\nViolación de flujo en la línea $from-$to:", violaciones_flujo)
+        # return violaciones_flujo
+    # end
 
     # Calcular las pérdidas totales
-    P_totales = sum(P_perdidas[i] for i in 1:nLineas)
-    Q_totales = sum(Q_perdidas[i] for i in 1:nLineas)
-    println("\nPérdidas totales:")
-    println("P_totales = ", P_totales)
-    println("Q_totales = ", Q_totales)
-end
+    # P_totales = sum(P_perdidas[i] for i in 1:nLineas)
+    # Q_totales = sum(Q_perdidas[i] for i in 1:nLineas)
+    # println("\nPérdidas totales:")
+    # println("P_totales = ", P_totales)
+    # println("Q_totales = ", Q_totales)
+# end
 
 ## Función principal
 
 # Leer datos desde el archivo CSV
-datosLinea = CSV.read("Casos/prueba/datosLineas.csv", DataFrame)
-datosNodo = CSV.read("Casos/prueba/datosNodos.csv", DataFrame)
+datosLinea = CSV.read("Casos/pglib_opf_case30_ieee/datosLineas.csv", DataFrame)
+datosNodo = CSV.read("Casos/pglib_opf_case30_ieee/datosNodos.csv", DataFrame)
 
 # Fijar los datos de la potencia base
 bMVA = 100.0
@@ -272,13 +272,13 @@ bMVA = 100.0
 # Calcular la matriz de admitancias
 nNodos = nrow(datosNodo)
 nLineas = nrow(datosLinea)
-## Y_sparse, y_series, y_shunt = calcularAdmitancias(datosLinea, nNodos, nLineas)
-## Y = Matrix(Y_sparse)
-Y = [2.1380 - 9.4936im -1.1765 + 4.7059im -0.9615 + 4.8077im;
-    -1.1765 + 4.7059im 3.9288 - 13.8802im -2.2936 + 7.6453im;
-    -0.9615 + 4.8077im -2.2936 + 7.6453im 2.8728 - 10.6587im]
-y_series = [1.1765 - 4.7059im, 0.9615 - 4.8077im, 2.2936 - 7.6453im]
-y_shunt = [0.0 + 0.0im, 0.0 + 0.02im, 0.0 + 0.0im]
+Y_sparse, y_series, y_shunt = calcularAdmitancias(datosLinea, nNodos, nLineas)
+Y = Matrix(Y_sparse)
+# Y = [2.1380 - 9.4936im -1.1765 + 4.7059im -0.9615 + 4.8077im;
+#     -1.1765 + 4.7059im 3.9288 - 13.8802im -2.2936 + 7.6453im;
+#     -0.9615 + 4.8077im -2.2936 + 7.6453im 2.8728 - 10.6587im]
+# y_series = [1.1765 - 4.7059im, 0.9615 - 4.8077im, 2.2936 - 7.6453im]
+# y_shunt = [0.0 + 0.0im, 0.0 + 0.02im, 0.0 + 0.0im]
 println("Matriz de admitancias:")
 display(Y)
 ## display(y_series)
@@ -288,12 +288,16 @@ display(Y)
 # TO DO: tienen que ser argumentos de la futura función, además deberán ir multiplicados
 # por la binaria para que sean 0 cuando estén apagados. El 1 debe ser siempre 0 porque es el
 # slack y se fijará al final del algortimo, cuando tengamos todas las tensiones calculadas.
-Pg = [0.0, 0.75, 0.0] #./bMVA
-Qg = [0.0, 0.5063, 0.0] #./bMVA
+Pg = [0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] #./bMVA
+Qg = [0.0, 0.3, 0.0, 0.0, 0.35, 0.0, 0.0, 0.35, 0.0, 0.0, 
+    0.22, 0.0, 0.22, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] #./bMVA
 
 # Llamar a la función de tensiones
 U = NewtonRaphson_Tensiones(datosLinea, datosNodo, bMVA, Pg, Qg, Y)
 
 # Llamar a la función de flujos 
-calcularFlujos(datosLinea, y_series, y_shunt, U)
+# calcularFlujos(datosLinea, y_series, y_shunt, U)
 

@@ -4,7 +4,7 @@
 using JuMP
 
 # Librerias de Optimizadores
-using Gurobi            # LP_OPF
+# using Gurobi            # LP_OPF
 using HiGHS             # LP_OPF
 using Ipopt             # AC_OPF - local
 using AmplNLWriter      # AC_OPF - global

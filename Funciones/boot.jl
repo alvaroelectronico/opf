@@ -11,7 +11,7 @@ function boot()
 
     # Con esta red simple se genera una los diferentes OPF para que ya estén cargados cuando el usuario los utilice
     println("Test 1...")
-    LP_OPF(test_linea, test_generador, test_nodos, 2, 1, 1, "Gurobi")
+    #LP_OPF(test_linea, test_generador, test_nodos, 2, 1, 1, "Gurobi")
 
     limpiarTerminal()
 

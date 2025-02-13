@@ -2933,7 +2933,9 @@ Q_totales = -4.622169255325746
 
 Información de Generadores: ##########################SOLUCIÓN##########################
 Me sale la misma solución que si lo hago con el método no lineal. Con distinto número de 
-partículas que en los ejemplos anteriores.  
+partículas que en los ejemplos anteriores, pero no es la solución
+global porque las potencias suministradas no son las correctas ni el coste. Solo coincide la
+combinación de estados.  
 ----------------------------
 
 Generador 1:

@@ -178,7 +178,7 @@ function evaluate!(p::ParticleHibrida, fitFunc::Function, datos::Tuple, log_file
     
     # Se escribe el valor del fitness en el archivo de log que se crea en la carpeta logs
     if log_enabled
-        log_to_file(log_file, "fitValue: $(p.fitValue)", log_enabled)
+        log_to_file(log_file, "fitValue: $(round(p.fitValue, digits=4))", log_enabled)
     end
     
     return p
@@ -261,6 +261,8 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
     ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
     tiempo_inicio = time()
     tiempo_limite = 60.0  # 1 minuto en segundos
+    # iteraciones_sin_mejora_max = 3500
+    # iteraciones_sin_mejora = 0
     
     # Extraer tipo_codificacion del tuple datos
     tipo_codificacion = s.datos[9]
@@ -273,6 +275,7 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
         
     ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
     while (time() - tiempo_inicio) < tiempo_limite
+    # while iteraciones_sin_mejora < iteraciones_sin_mejora_max
         log_to_file(log_file, "\n=========== Iteración $iteraciones ==============", log_enabled)
         log_to_file(log_file, "Tiempo transcurrido: $(round(time() - tiempo_inicio, digits=2)) segundos", log_enabled)
         
@@ -289,15 +292,15 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
             mejora = mejor_fitness_historico - s.fitgBest
             log_to_file(log_file, "\nMejora encontrada: $mejora", log_enabled)
             mejor_fitness_historico = s.fitgBest
-            iteraciones_sin_mejora = 0
+            # iteraciones_sin_mejora = 0
             iteraciones += 1
         else
-            iteraciones_sin_mejora += 1
+            # iteraciones_sin_mejora += 1
             iteraciones += 1
         end
         
         updateInertia!(s)
-        log_to_file(log_file, "\nMejor fitness actual: $(s.fitgBest)", log_enabled)
+        log_to_file(log_file, "\nMejor fitness actual: $(round(s.fitgBest, digits=4))", log_enabled)
         log_to_file(log_file, "Iteraciones sin mejora: $iteraciones_sin_mejora", log_enabled)
     end
     
@@ -368,7 +371,7 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     coste = 0.0
     for i in 1:p.nGeneradores
         if estados_activos[i]
-            coste += datosGenerador.P_COSTE0[i] + datosGenerador.P_COSTE1[i] * potencias_P[i] + datosGenerador.P_COSTE2[i] * potencias_P[i]^2
+            coste += datosGenerador.P_COSTE0[i] + datosGenerador.P_COSTE1[i] * potencias_P[i] * bMVA + datosGenerador.P_COSTE2[i] * (potencias_P[i] * bMVA)^2
         end
     end
 
@@ -382,15 +385,15 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
         for i in 1:p.nGeneradores
             log_to_file(log_file, "\nGenerador $i:", log_enabled)
             log_to_file(log_file, "Estado u: $(round(p.position_u[i], digits=4))", log_enabled)
-            log_to_file(log_file, "P inicial: $(round(potencias_P[i], digits=2)) MW", log_enabled)
-            log_to_file(log_file, "Q inicial: $(round(potencias_Q[i], digits=2)) MVAr", log_enabled)
+            log_to_file(log_file, "P inicial: $(round(potencias_P[i]*bMVA, digits=4)) MW", log_enabled)
+            log_to_file(log_file, "Q inicial: $(round(potencias_Q[i]*bMVA, digits=4)) MVAr", log_enabled)
             log_to_file(log_file, "Límites P: [$(datosGenerador.P_MIN[i]), $(datosGenerador.P_MAX[i])] MW", log_enabled)
             log_to_file(log_file, "Límites Q: [$(datosGenerador.Q_MIN[i]), $(datosGenerador.Q_MAX[i])] MVAr", log_enabled)
             
             # Ajustar potencias según si está activo o no
             if estados_activos[i]
-                log_to_file(log_file, "P ajustada: $(round(potencias_P[i], digits=2)) MW", log_enabled)
-                log_to_file(log_file, "Q ajustada: $(round(potencias_Q[i], digits=2)) MVAr", log_enabled)
+                log_to_file(log_file, "P ajustada: $(round(potencias_P[i]*bMVA, digits=4)) MW", log_enabled)
+                log_to_file(log_file, "Q ajustada: $(round(potencias_Q[i]*bMVA, digits=4)) MVAr", log_enabled)
                 log_to_file(log_file, "Estado: Encendido", log_enabled)
             else
                 log_to_file(log_file, "P ajustada: 0.0 MW", log_enabled)

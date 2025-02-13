@@ -2106,7 +2106,9 @@ Q_totales = -4.720089547185474
 
 Información de Generadores: ##############SOLUCION############# 
 Misma solución que con la resolución no lineal. 
-Menor número de iteraciones que en el ejemplo anterior. 
+Menor número de iteraciones que en el ejemplo anterior, pero no es la solución
+global porque las potencias suministradas no son las correctas ni el coste. Solo coincide la
+combinación de estados.
 ----------------------------
 
 Generador 1:

@@ -40,7 +40,7 @@ while !finPrograma
     println("Datos extraídos.")
 
     # Se generan n instancias aleatorias
-    n_instancias = 50
+    n_instancias = 2
     instancias = generar_instancias_aleatorias!(datos[3], datos[2], datos[1], n_instancias)
 
     # Almaceno resultados

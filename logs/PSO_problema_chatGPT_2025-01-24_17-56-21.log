@@ -4299,7 +4299,9 @@ Q_totales = -4.624268542147325
 
 Información de Generadores: ##############SOLUCION############# 
 Misma solución que con la resolución no lineal. 
-Menor número de iteraciones y mayor número de partículas que en el primer ejemplo.  
+Menor número de iteraciones y mayor número de partículas que en el primer ejemplo, pero no es la solución
+global porque las potencias suministradas no son las correctas ni el coste. Solo coincide la
+combinación de estados.  
 ----------------------------
 
 Generador 1:

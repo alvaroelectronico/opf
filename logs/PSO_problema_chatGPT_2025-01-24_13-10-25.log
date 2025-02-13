@@ -7846,7 +7846,9 @@ Q_totales: 0.5752306247109035 p.u.
 Violaciones de tensión: 0.0
 
 Información de Generadores: ##########################SOLUCIÓN##########################
-Me sale la misma solución que si lo hago con el método no lineal. 
+Me sale la misma solución que si lo hago con el método no lineal, pero no es la solución
+global porque las potencias suministradas no son las correctas ni el coste. Solo coincide la
+combinación de estados.
 ----------------------------
 
 Generador 1:
