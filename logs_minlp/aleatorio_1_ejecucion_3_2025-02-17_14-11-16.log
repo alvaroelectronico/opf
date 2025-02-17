@@ -1,0 +1,20 @@
+=== Resultados de la Red (Ejecución 3) ===
+
+Generadores:
+------------
+Generador 1:
+  Estado: Encendido
+  Potencia Activa: 51.0 MW
+  Potencia Reactiva: 8.1196 MVAr
+
+Generador 2:
+  Estado: Encendido
+  Potencia Activa: 49.0 MW
+  Potencia Reactiva: -3.3258 MVAr
+
+Generador 3:
+  Estado: Encendido
+  Potencia Activa: 12.0 MW
+  Potencia Reactiva: -4.509 MVAr
+
+Coste Total: 3542.0 €

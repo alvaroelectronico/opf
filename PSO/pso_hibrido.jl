@@ -261,23 +261,26 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
     ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
     tiempo_inicio = time()
     tiempo_limite = 60.0  # 1 minuto en segundos
-    # iteraciones_sin_mejora_max = 3500
-    # iteraciones_sin_mejora = 0
+    iteraciones_sin_mejora_max = 1500
     
     # Extraer tipo_codificacion del tuple datos
     tipo_codificacion = s.datos[9]
-    
+
     iteraciones = 1
+    iteraciones_sin_mejora = 0
     
-    ## for i in 1:s.nInter
-        ##log_to_file(log_file, "\n=== Iteración $i ===", log_enabled)
-        ##log_to_file(log_file, "Inercia actual: $(s.w)", log_enabled)
-        
-    ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
-    while (time() - tiempo_inicio) < tiempo_limite
-    # while iteraciones_sin_mejora < iteraciones_sin_mejora_max
+    while (time() - tiempo_inicio) <= tiempo_limite || iteraciones_sin_mejora <= iteraciones_sin_mejora_max
         log_to_file(log_file, "\n=========== Iteración $iteraciones ==============", log_enabled)
         log_to_file(log_file, "Tiempo transcurrido: $(round(time() - tiempo_inicio, digits=2)) segundos", log_enabled)
+        
+        # Verificar si debemos parar
+        if (time() - tiempo_inicio) > tiempo_limite
+            log_to_file(log_file, "\nAlcanzado límite de tiempo", log_enabled)
+            break
+        elseif iteraciones_sin_mejora > iteraciones_sin_mejora_max
+            log_to_file(log_file, "\nAlcanzado máximo de iteraciones sin mejora", log_enabled)
+            break
+        end
         
         for (j, p) in enumerate(s.particles)
             log_to_file(log_file, "\nActualizando partícula $j", log_enabled)
@@ -292,16 +295,15 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
             mejora = mejor_fitness_historico - s.fitgBest
             log_to_file(log_file, "\nMejora encontrada: $mejora", log_enabled)
             mejor_fitness_historico = s.fitgBest
-            # iteraciones_sin_mejora = 0
-            iteraciones += 1
+            iteraciones_sin_mejora = 0
         else
-            # iteraciones_sin_mejora += 1
-            iteraciones += 1
+            iteraciones_sin_mejora += 1
         end
         
         updateInertia!(s)
         log_to_file(log_file, "\nMejor fitness actual: $(round(s.fitgBest, digits=4))", log_enabled)
         log_to_file(log_file, "Iteraciones sin mejora: $iteraciones_sin_mejora", log_enabled)
+        iteraciones += 1
     end
     
     if tipo_codificacion == "Cod_Potencia"
