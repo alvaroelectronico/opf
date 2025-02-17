@@ -44,7 +44,7 @@ if abspath(PROGRAM_FILE) == @__FILE__
 
     # Parámetros configurables
     parametros = Dict(
-        "caso_estudio" => "problema_chatGPT",  # Caso de estudio a resolver
+        "caso_estudio" => "problema_GPT_aleatorio2",  # Caso de estudio a resolver
         "tipo_pso" => "hibrido",                   # "binario" o "hibrido"
         "tipo_codificacion" => "Cod_Tramos",     # "Cod_Potencia" o "Cod_Tramos"
         "n_particulas" => 5,                       # Número de partículas
