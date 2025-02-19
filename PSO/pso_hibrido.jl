@@ -42,7 +42,7 @@ function ParticleHibrida(nGeneradores::Int, datosGenerador::DataFrame, tipo_codi
     nFitEval = 0
     
     if tipo_codificacion == "Cod_Potencia"
-        # Inicializar potencias dentro de límites
+        # Inicializar potencias (activa y reactiva) dentro de límites
         position_pg = zeros(Float64, nGeneradores, 2)
         velocity_pg = zeros(Float64, nGeneradores, 2)
         
@@ -81,7 +81,7 @@ function updatePosition!(p::ParticleHibrida, w::Float64, c1::Float64, c2::Float6
     p.velocity_u = w * p.velocity_u + 
                   c1 * rand() * (p.pBest_u - p.position_u) + 
                   c2 * rand() * (p.lBest_u - p.position_u)
-    p.position_u = clamp.(p.position_u + p.velocity_u, 0.0, 1.0)
+    p.position_u = clamp.(p.position_u + p.velocity_u, 0.0, 1.0) # Clamp hace que si la posición es menor a 0, lo pone en 0 y si es mayor
     
     # Actualizar velocidades y posiciones de PG solo para la codificación de potencia
     if tipo_codificacion == "Cod_Potencia"
@@ -124,8 +124,8 @@ mutable struct SwarmHibrido
     # Función para inicializar el enjambre (partículas, estado de los generadores y potencias)
     function SwarmHibrido(fitFunc::Function, nGeneradores::Int, datos::Tuple;
             nParticle::Int=3, nNeibor::Int=3, nInter::Int=2000,
-            c1::Float=2.0, c2::Float=2.0,
-            wMax::Float=0.9, wMin::Float=0.4)
+            c1::Float=1.5, c2::Float=1.5,
+            wMax::Float=0.7, wMin::Float=0.2)
         
         if nNeibor > nParticle
             error("El número de partículas en un grupo local no debe exceder el número total de partículas")
@@ -260,8 +260,8 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
     iteraciones_sin_mejora = 0
     ## AÑADIDO PARA RESOLVER EL PROBLEMA CON TIEMPO DETERMINADO 
     tiempo_inicio = time()
-    tiempo_limite = 60.0  # 1 minuto en segundos
-    iteraciones_sin_mejora_max = 1500
+    tiempo_limite = 600.0  # 10 minutos en segundos
+    iteraciones_sin_mejora_max = 3500
     
     # Extraer tipo_codificacion del tuple datos
     tipo_codificacion = s.datos[9]
