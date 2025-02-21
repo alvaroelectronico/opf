@@ -145,5 +145,5 @@ end
 
 # Ejecutar el análisis múltiple
 if abspath(PROGRAM_FILE) == @__FILE__
-    analisis_estadistico("problema_chatGPT", 1, 2)
+    analisis_estadistico("problema_chatGPT", 4, 5)
 end 

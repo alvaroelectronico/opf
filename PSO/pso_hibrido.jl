@@ -124,8 +124,8 @@ mutable struct SwarmHibrido
     # Función para inicializar el enjambre (partículas, estado de los generadores y potencias)
     function SwarmHibrido(fitFunc::Function, nGeneradores::Int, datos::Tuple;
             nParticle::Int=3, nNeibor::Int=3, nInter::Int=2000,
-            c1::Float=1.5, c2::Float=1.5,
-            wMax::Float=0.7, wMin::Float=0.2)
+            c1::Float=2.0, c2::Float=2.0,
+            wMax::Float=0.9, wMin::Float=0.4)
         
         if nNeibor > nParticle
             error("El número de partículas en un grupo local no debe exceder el número total de partículas")
