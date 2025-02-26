@@ -27,17 +27,16 @@ function analisis_estadistico(red::String, n_instancias::Int64, n_replicaciones:
     # Creación de la carpeta (si no existe) para guardar los xlsx con los resultados 
     mkpath("resultados_excel")
 
-    # Creación del nombre del Excel
-    timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
-    excel_filename = joinpath("resultados_excel", "resultados_estadisticos_$(red)_$timestamp.xlsx")
-
     # Inicialización de los arrays para guardar tiempos y costes de cada instancia
     tiempos_por_instancia = Float64[]
     costes_por_instancia = Float64[]
 
     # Bucle para recorrer cada instancia
     for instancia in 1:n_instancias
-
+        # Creación del nombre del Excel
+        timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
+        excel_filename = joinpath("resultados_excel", "resultados_estadisticos_$(red)_instancia$(instancia)_$timestamp.xlsx")
+        
         # Generación de los datos aleatorios de la instancia actual
         ruta_destino = joinpath(ruta_base, "aleatorio_$instancia")
         mkpath(ruta_destino) # Creación de la carpeta donde se guardarán los archivos de nodos, generadores y líneas aleatorios. 
@@ -145,5 +144,5 @@ end
 
 # Ejecutar el análisis múltiple
 if abspath(PROGRAM_FILE) == @__FILE__
-    analisis_estadistico("problema_chatGPT", 4, 5)
+    analisis_estadistico("red_4Nodos", 6, 5)
 end 
