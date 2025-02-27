@@ -5,7 +5,7 @@ using Random
 """
 Función para generar datos aleatorios basados en datos existentes
 """
-function generar_datos_aleatorios(ruta_csv::String, factor_variacion::Float64=0.05)
+function generar_datos_aleatorios(ruta_csv::String, factor_variacion::Float64=0.01)
     # Leer datos del CSV
     df_original = CSV.read(ruta_csv, DataFrame)
     
