@@ -1,76 +1,81 @@
-####Función principal donde se llaman a todas las funciones: inicialización, resolución y petición caso de estudio
+# Main file for OPF project
+# This file serves as the main entry point for the OPF project
 
-# Se cargan todas las librerías
-include("./Funciones/cargarLibrerias.jl")
+# Add paths to the module search path
+push!(LOAD_PATH, "common/utils")
+push!(LOAD_PATH, "common/data")
+push!(LOAD_PATH, "common/results")
+push!(LOAD_PATH, "common/ui")
+push!(LOAD_PATH, "case_management")
+push!(LOAD_PATH, "config")
 
-# Se cargan las funciones
-include("./Funciones/cargarFunciones.jl")
+# Load common utilities
+include("common/utils/cargarLibrerias.jl")
+include("common/utils/limpiarTerminal.jl")
+include("common/utils/cargarFunciones.jl")
+include("common/utils/boot.jl")
 
-Logging.disable_logging(Logging.Error)
+# Load common data functions
+include("common/data/extraerDatos.jl")
 
-# Se inicializa el programa con diferentes test
-# principalmente para cargar los solvers y resolver con mayor rapidez el caso pedido por el usuario
-boot()
+# Load common results functions
+include("common/results/gestorResultados.jl")
 
-# Variable para salir del bucle
-finPrograma = false
-# En caso de que no sea fin de programa
-while !finPrograma
+# Load UI functions
+include("common/ui/elegirOpcion.jl")
+include("common/ui/selectEstudio.jl")
 
-    # Limpiza del terminal
+# Load configuration
+include("config/configuration.jl")
+
+# Load case management functions
+include("case_management/case_generator.jl")
+include("case_management/case_analyzer.jl")
+include("case_management/case_analyzer_multiple.jl")
+
+# Main menu function
+function main_menu()
     limpiarTerminal()
+    println("=== OPF PROJECT ===")
+    println("1. DC OPF (MILP)")
+    println("2. AC OPF (MINLP)")
+    println("3. PSO AC OPF (Generators)")
+    println("4. PSO AC OPF (Generators + Lines)")
+    println("5. Case Analysis")
+    println("6. Generate Random Cases")
+    println("7. Exit")
+    println()
     
-    # Se entra en un bucle para que el usuario seleccione el caso que se quiere estudiar
-    casoEstudio, opfTipo, s = selectEstudio()
+    opcion = elegirOpcion("Select an option: ", 1, 7)
     
-    # Limpiza del terminal
-    limpiarTerminal()
-
-    # Se extrae los datos del caso de estudio
-    # Donde:
-    #   datos[1] = datos de las líneas
-    #   datos[2] = datos de los generadores
-    #   datos[3] = datos de la demanda
-    #   datos[4] = número de nodos
-    #   datos[5] = número de líneas
-    #   datos[6] = potencia base
-    #   datos[7] = ruta al archivo .m del caso
-    println("\nExtrayendo datos...")
-    datos = extraerDatos(casoEstudio)
-    println("Datos extraídos.")
-
-    # Una vez elegido el caso de estudio se llama a la función correspondiente para realizar el cálculo del problema de optimización
-    println("\nGenerando OPF...")
-    # En caso de un LP-OPF
-    if opfTipo == "LP-OPF"
-        m, solGen, solFlujos, solAngulos = LP_OPF(datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], s)
-
-    # En caso de un AC-OPF
-    elseif opfTipo == "AC-OPF"
-        m, solGen, solFlujos, solAngulos, solBinaria, coste_total = AC_OPF(datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], s)
-
-    # Si se llega hasta este punto y no se da ningún caso anterior, devuelve un error
-    else
-        println("ERROR: Fallo en cargar el tipo de OPF")
-
+    if opcion == 1
+        include("main/main_dc_opf.jl")
+        main_dc_opf()
+    elseif opcion == 2
+        include("main/main_ac_opf.jl")
+        main_ac_opf()
+    elseif opcion == 3
+        include("main/main_pso_generators.jl")
+        main_pso_generators()
+    elseif opcion == 4
+        include("main/main_pso_generators_lines.jl")
+        main_pso_generators_lines()
+    elseif opcion == 5
+        include("case_management/case_analyzer.jl")
+        case_analyzer()
+    elseif opcion == 6
+        include("case_management/case_generator.jl")
+        case_generator()
+    elseif opcion == 7
+        println("Goodbye!")
+        return
     end
-
-    # Limpieza del terminal
-    limpiarTerminal()
-
-    # Gensión de los resultados de optimización
-    println("Problema resuelto")
-    gestorResultados(m, solGen, solFlujos, solAngulos, solBinaria, datos[7], opfTipo, s, coste_total)
-
-    # Preguntar al usuario si quiere continuar en el bucle para estudiar otro caso
-    println("\nPulsa la tecla ENTER para continuar o cualquier otra entrada para salir.")
-    if readline() == ""
-        # Se mantiene la variable en falso para continuar en el bucle
-        finPrograma = false
-    else
-        # Actualización de la variable para salir del bucle
-        finPrograma = true
-        exit()
-    end
-
+    
+    # Return to main menu
+    main_menu()
 end
+
+# Start the application
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_menu()
+end 

@@ -1,10 +1,8 @@
-using Graphs
 using CSV
 using DataFrames
 
 mutable struct ParticleHibrida
     nGeneradores::Int
-    nLineas::Int
     
     # Estado de los generadores (u)
     position_u::Array{Float64, 1}  # Valores continuos [0,1]
@@ -18,11 +16,6 @@ mutable struct ParticleHibrida
     pBest_pg::Union{Matrix{Float64}, Nothing}
     lBest_pg::Union{Matrix{Float64}, Nothing}
 
-    # Estado de las líneas (l)
-    position_l::Array{Float64, 1}  # 0 = línea desconectada (interruptor abierto), 1 = línea conectada (interruptor cerrado)
-    velocity_l::Array{Float64, 1}
-    pBest_l::Array{Float64, 1}
-    lBest_l::Array{Float64, 1}
     
     # Valores de fitness
     fitValue::Float64
@@ -33,20 +26,13 @@ mutable struct ParticleHibrida
 end
 
 # Constructor
-function ParticleHibrida(nGeneradores::Int, nLineas::Int, datosGenerador::DataFrame, tipo_codificacion::String) 
-    # Inicialización de estados de generadores(u)
+function ParticleHibrida(nGeneradores::Int, datosGenerador::DataFrame, tipo_codificacion::String) 
+    # Inicialización de estados (u)
     position_u = rand(nGeneradores)
     velocity_u = rand(nGeneradores) .- 0.5
     pBest_u = copy(position_u)
     lBest_u = copy(position_u)
     
-    # Inicialización de estados de líneas (l)
-    position_l = ones(Float64, nLineas) # Todas las líneas están conectadas inicialmente 
-    velocity_l = rand(nLineas) .- 0.5  
-    pBest_l = copy(position_l)
-    lBest_l = copy(position_l)
-
-    # Inicialización de los valores de fitness (infinitos para irlos reduciendo)
     fitValue = Inf
     fitpBest = Inf
     fitlBest = Inf
@@ -78,68 +64,23 @@ function ParticleHibrida(nGeneradores::Int, nLineas::Int, datosGenerador::DataFr
     end
     
     # Crear y retornar la nueva partícula
-    ParticleHibrida(nGeneradores, nLineas, position_u, velocity_u, pBest_u, lBest_u,
+    ParticleHibrida(nGeneradores, position_u, velocity_u, pBest_u, lBest_u,
                     position_pg, velocity_pg, pBest_pg, lBest_pg,
-                    position_l, velocity_l, pBest_l, lBest_l,
                     fitValue, fitpBest, fitlBest, nFitEval)
-end
-
-# Función sigmoidea para transformar las velocidades de líneas en probabilidades
-function sigmoide(x::Float64)   
-    return 1.0 / (1.0 + exp(-x))
 end
 
 # Función para actualizar la posición de las partículas
 function updatePosition!(p::ParticleHibrida, w::Float64, c1::Float64, c2::Float64, datos::Tuple)
     datosGenerador = datos[2]
-    datosLinea = datos[1]
     tipo_codificacion = datos[9]
         
-    # Actualizar velocidades y posiciones de los estados de los generadores
+    # Actualizar velocidades y posiciones de la continua
     p.velocity_u = w * p.velocity_u + 
                   c1 * rand() * (p.pBest_u - p.position_u) + 
                   c2 * rand() * (p.lBest_u - p.position_u)
     p.position_u = clamp.(p.position_u + p.velocity_u, 0.0, 1.0) # Clamp hace que si la posición es menor a 0, lo pone en 0 y si es mayor
     
-    # Actualizar velocidades y posiciones de las líneas usando la sigmoide
-    p.velocity_l = w * p.velocity_l + 
-                  c1 * rand() * (p.pBest_l - p.position_l) + 
-                  c2 * rand() * (p.lBest_l - p.position_l)
-    
-    # Transformar la velocidad en probabilidad de cambiar la posición de la línea
-    prob_l = sigmoide.(p.velocity_l)
-
-    # Calcular la posición de la línea en base a la probabilidad
-    for i in 1:p.nLineas
-        if rand() < prob_l[i] # En este caso, la v es muy alta, haciendo que la probabilidad de que la posición de la línea sea 1 (activa) sea alta. 
-            p.position_l[i] = 1.0 # Línea conectada (cerrada)
-        else
-            p.position_l[i] = 0.0 # Línea desconectada (abierta)
-        end
-    end
-
-    # Asegurar que la red permanezca conectada (ningún generador aislado)
-    intentos = 0
-    max_intentos = 100  # Para evitar bucles infinitos
-    while !verificarConectividad(p.position_l, datos)
-        lineas_abiertas = findall(x -> x < 0.5, p.position_l)
-        if !isempty(lineas_abiertas)
-            idx = rand(lineas_abiertas)
-            p.position_l[idx] = 1.0  
-        else
-            break
-        end
-        intentos += 1
-        if intentos > max_intentos
-            println("¡Advertencia! No se pudo conectar la red tras $max_intentos intentos.")
-            break
-        end
-    end
-    # Print de depuración
-    println("Intentos de reparación de conectividad: $intentos")
-    println("Estado final de líneas: ", p.position_l)
-    
-    # Actualizar velocidades y posiciones de las potencias P y Q (solo para Cod_Potencia)
+    # Actualizar velocidades y posiciones de PG solo para la codificación de potencia
     if tipo_codificacion == "Cod_Potencia"
         for i in 1:p.nGeneradores
         p.velocity_pg[i,:] = w * p.velocity_pg[i,:] + 
@@ -153,65 +94,9 @@ function updatePosition!(p::ParticleHibrida, w::Float64, c1::Float64, c2::Float6
     end
 end
 
-# Función para verificar la conectividad de la red
-function verificarConectividad(position_l::Array{Float64, 1}, datos::Tuple)
-    datosLinea = datos[1]
-    datosGenerador = datos[2]
-    datosNodo = datos[3]
-    nNodos = datos[4]
-    
-    # Identificar nodos con generadores
-    nodos_generadores = unique(datosGenerador.BUS)
-    println("Nodos generadores: ", nodos_generadores)
-    
-    # Crear grafo
-    g = SimpleGraph(nNodos)
-    for i in 1:length(position_l)
-        if position_l[i] >= 0.5
-            from = datosLinea.F_BUS[i]
-            to = datosLinea.T_BUS[i]
-            add_edge!(g, from, to)
-        end
-    end
-    println("Líneas conectadas: ", findall(x -> x >= 0.5, position_l))
-    println("Número de aristas en el grafo: ", ne(g))
-    
-    # Si solo hay un generador, la red está conectada
-    if length(nodos_generadores) <= 1
-        return true 
-    end
-
-    # Verficar que existe un camino entre cada par de nodos con generadores
-    for i in 1:length(nodos_generadores)-1
-        for j in (i+1):length(nodos_generadores)
-            if !has_path(g, nodos_generadores[i], nodos_generadores[j])
-                return false # Si hay un generador aislado, la red no está conectada
-            end
-        end
-    end
-
-    # Verificar que todos los nodos de carga estén conectados, al menos, a un generador
-    nodos_carga = findall(x -> x > 0.0, datosNodo.PD) # Se buscan los nodos de crga (demanda>0)
-    for nodo_carga in nodos_carga
-        conectado_a_generador = false
-        for nodo_gen in nodos_generadores
-            if has_path(g, nodo_carga, nodo_gen) # se verifica que haya un camino hacia un generador
-                conectado_a_generador = true
-                break
-            end
-        end
-        if !conectado_a_generador
-            return false  # Algún nodo de carga está aislado
-        end
-    end
-
-    return true # Si pasa todas las comprobaciones, la red está conectada
-end   
-
 mutable struct SwarmHibrido
     fitFunc::Function
     nGeneradores::Int
-    nLineas::Int
     datos::Tuple
     
     nParticle::Int
@@ -226,7 +111,6 @@ mutable struct SwarmHibrido
     w::Float64
     
     gBest_u::Array{Float64, 1}
-    gBest_l::Array{Float64, 1}
     gBest_pg::Union{Array{Float64, 2}, Nothing}
     fitgBest::Float64
     
@@ -235,7 +119,7 @@ mutable struct SwarmHibrido
     nFitEvals::Int
     
     # Función para inicializar el enjambre (partículas, estado de los generadores y potencias)
-    function SwarmHibrido(fitFunc::Function, nGeneradores::Int, nLineas::Int, datos::Tuple;
+    function SwarmHibrido(fitFunc::Function, nGeneradores::Int, datos::Tuple;
             nParticle::Int=3, nNeibor::Int=3, nInter::Int=2000,
             c1::Float=2.0, c2::Float=2.0,
             wMax::Float=0.9, wMin::Float=0.4)
@@ -249,19 +133,19 @@ mutable struct SwarmHibrido
         tipo_codificacion = datos[9]  # Extraer tipo_codificacion del tuple datos
         
         # Inicializar partículas pasando el tipo_codificacion
-        particles = [ParticleHibrida(nGeneradores, nLineas, datosGenerador, tipo_codificacion) for i in 1:nParticle]
+        particles = [ParticleHibrida(nGeneradores, datosGenerador, tipo_codificacion) for i in 1:nParticle]
         
         # Inicializar mejores posiciones globales
         gBest_u = rand(nGeneradores) # Vector de 0 y 1 
-        gBest_l = ones(Float64, nLineas) # Todas las líneas conectadas inicialmente
         gBest_pg = tipo_codificacion == "Cod_Potencia" ? zeros(Float64, nGeneradores, 2) : nothing 
         fitgBest = Inf # Valor infinito para tratar de minimizarlo
         
         nFitEvals = 0 # Número de evaluaciones de fitness
         
-        # Se crea el objeto SwarmHibrido con los valores iniciales 
-        new(fitFunc, nGeneradores, nLineas, datos, nParticle, nNeibor, nInter,
-            c1, c2, wMax, wMin, w, gBest_u, gBest_l, gBest_pg, fitgBest,
+        # Se crea el objeto SwarmHibrido con los valores iniciales para la codificación de potencia
+        # se incluye gBest_pg y para la codificación de tramos no
+        new(fitFunc, nGeneradores, datos, nParticle, nNeibor, nInter,
+            c1, c2, wMax, wMin, w, gBest_u, gBest_pg, fitgBest,
             particles, nFitEvals)
     end
 end
@@ -284,7 +168,6 @@ function evaluate!(p::ParticleHibrida, fitFunc::Function, datos::Tuple, log_file
     if p.fitValue < p.fitpBest # Si el fitness de la partícula es menor que el mejor fitness personal, se actualiza
         p.fitpBest = p.fitValue
         p.pBest_u = copy(p.position_u)
-        p.pBest_l = copy(p.position_l)
         if tipo_codificacion == "Cod_Potencia"
             p.pBest_pg = copy(p.position_pg)
         end
@@ -305,7 +188,6 @@ function updatepBestAndFitpBest!(p::ParticleHibrida, datos::Tuple)
     if p.fitValue < p.fitpBest
         p.fitpBest = p.fitValue
         p.pBest_u = copy(p.position_u)
-        p.pBest_l = copy(p.position_l)
         if tipo_codificacion == "Cod_Potencia"
             p.pBest_pg = copy(p.position_pg)
         end
@@ -329,7 +211,6 @@ function updategBestAndFitgBest!(s::SwarmHibrido)
     # Si el fitness de la partícula seleccionada es menor que el mejor fitness global, se actualiza
     if fitgBest < s.fitgBest
         s.gBest_u = copy(s.particles[index].position_u)
-        s.gBest_l = copy(s.particles[index].position_l)
         if tipo_codificacion == "Cod_Potencia"
             s.gBest_pg = copy(s.particles[index].position_pg)
         end
@@ -348,7 +229,6 @@ function updatelBestAndFitlBest!(s::SwarmHibrido)
         
         if fitlBest < s.particles[i].fitlBest
             s.particles[i].lBest_u = copy(s.particles[neiborIds[index]].position_u)
-            s.particles[i].lBest_l = copy(s.particles[neiborIds[index]].position_l)
             if tipo_codificacion == "Cod_Potencia"
                 s.particles[i].lBest_pg = copy(s.particles[neiborIds[index]].position_pg)
             end
@@ -371,7 +251,7 @@ function initialize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}=nothing
     return s
 end
 
-function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enabled::Bool)
+function optimize_swarm!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enabled::Bool)
     log_to_file(log_file, "\nIniciando PSO híbrido", log_enabled)
     mejor_fitness_historico = Inf
     iteraciones_sin_mejora = 0
@@ -424,9 +304,9 @@ function optimize!(s::SwarmHibrido, log_file::Union{IOStream, Nothing}, log_enab
     end
     
     if tipo_codificacion == "Cod_Potencia"
-        return s.gBest_u, s.gBest_l, s.gBest_pg, s.fitgBest
+        return s.gBest_u, s.gBest_pg, s.fitgBest
     else
-        return s.gBest_u, s.gBest_l, nothing, s.fitgBest
+        return s.gBest_u, nothing, s.fitgBest
     end
 end
 
@@ -435,22 +315,9 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     # Desempaquetar datos correctamente
     datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, _, caso_estudio, tipo_codificacion = datos
     
-    # Verificar que la red esté conectada
-    if !verificarConectividad(p.position_l, datos)
-        return Inf, zeros(nNodos) # Devolver coste infinito si la red no está conectada
-    end
-
-    # Guardar el frame de las líneas en una copia
-    datosLinea_activa = copy(datosLinea)
-    lineas_abiertas = findall(x -> x < 0.5, p.position_l)
-    
-    # Calcular matriz de admitancias considerando solo líneas activas
-    Y_sparse, y_series, y_shunt = calcularAdmitanciasConLineasAbiertas(datosLinea, p.position_l, nNodos, nLineas)
-    Y = Matrix(Y_sparse)
-    
     # Calcular matriz de admitancias y valores relacionados
-    #Y_sparse, y_series, y_shunt = calcularAdmitancias(datosLinea, nNodos, nLineas)
-    #Y = Matrix(Y_sparse)
+    Y_sparse, y_series, y_shunt = calcularAdmitancias(datosLinea, nNodos, nLineas)
+    Y = Matrix(Y_sparse)
     
     # Inicializar arrays
     potencias_P = zeros(p.nGeneradores)
@@ -483,38 +350,32 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
     if potencia_total_generada < demanda_total
         return Inf, zeros(nNodos)
     end
-        
-    # Evaluar tensiones con el tipo correcto 
+    
     try
+        # Evaluar tensiones con el tipo correcto
         V, violaciones_tension, potencias_P, potencias_Q = NewtonRaphson_Tensiones(datosLinea, datosNodo, datosGenerador, 
-                                                                            float(bMVA), potencias_P, potencias_Q, Y, p.position_l,
-                                                                            log_file, log_enabled)
+                                                                                float(bMVA), potencias_P, potencias_Q, Y, 
+                                                                                log_file, log_enabled)
+        
         if V === nothing || violaciones_tension === nothing # Cuando el Newton-Raphson no converge, se penaliza la partícula
             log_to_file(log_file, "\n¡No se ha alcanzado la convergencia! Se penaliza la partícula y se pasa a la siguiente.", log_enabled)
             return Inf, zeros(nNodos)
         end
-
-        # SOLO si hay convergencia, se sigue evaluando el resto:
-        violaciones_flujo = calcularFlujos(datosLinea, y_series, y_shunt, V, float(bMVA), p.position_l, log_file, log_enabled)
+        
+        # Evaluar flujos y sus violaciones
+        violaciones_flujo = calcularFlujos(datosLinea, y_series, y_shunt, V, float(bMVA), log_file, log_enabled)
         
         # Calcular coste de generación usando estados_activos
         coste = 0.0
         for i in 1:p.nGeneradores
             if estados_activos[i]
-                coste += datosGenerador.P_COSTE0[i] + datosGenerador.P_COSTE1[i] * abs(potencias_P[i]) * bMVA + datosGenerador.P_COSTE2[i] * (abs(potencias_P[i]) * bMVA)^2 
-                #coste += datosGenerador.P_COSTE0[i] + datosGenerador.P_COSTE1[i] * potencias_P[i] * bMVA
+                coste += datosGenerador.P_COSTE0[i] + datosGenerador.P_COSTE1[i] * potencias_P[i] * bMVA + datosGenerador.P_COSTE2[i] * (potencias_P[i] * bMVA)^2
             end
         end
 
         # Penalización por violaciones de tensión Y flujo
         coste_total = coste + 1000 * violaciones_tension + 1000 * violaciones_flujo
-
-        vector_binario = Int.(p.position_l .>= 0.5)
-        # Coste de amortización de las líneas
-        for i in 1:p.nLineas
-            coste_total += 2000 * vector_binario[i]
-        end
-    
+        
         # Modificar cómo se muestra la información de los generadores
         if log_enabled
             log_to_file(log_file, "\nInformación de Generadores:", log_enabled)
@@ -537,28 +398,14 @@ function evaluarParticula(p::ParticleHibrida, datos::Tuple, log_file::Union{IOSt
                     log_to_file(log_file, "Q ajustada: 0.0 MVAr", log_enabled)
                     log_to_file(log_file, "Estado: Apagado", log_enabled)
                 end
-            end
-            log_to_file(log_file, "\nInformación de Líneas:", log_enabled)
-            log_to_file(log_file, "----------------------------", log_enabled)
-            num_lineas_abiertas = count(x -> x < 0.5, p.position_l)
-            for i in 1:p.nLineas
-                estado = p.position_l[i] > 0.5 ? "Cerrada" : "Abierta"
-                log_to_file(log_file, "Línea $i ($(datosLinea.F_BUS[i])-$(datosLinea.T_BUS[i])): $estado", log_enabled)
-            end
-            
-            log_to_file(log_file, "\nTotal líneas abiertas: $num_lineas_abiertas", log_enabled)
-            log_to_file(log_file, "Coste de generación: $(round(coste, digits=2))", log_enabled)
-            log_to_file(log_file, "Penalización por violaciones de tensión: $(round(1000*violaciones_tension, digits=2))", log_enabled)
-            log_to_file(log_file, "Penalización por violaciones de flujo: $(round(1000*violaciones_flujo, digits=2))", log_enabled)
-            log_to_file(log_file, "Coste total: $(round(coste_total, digits=2))", log_enabled)
-        end
-
+            end 
+        end   
     return coste_total, V
 
     catch e
         log_to_file(log_file, "\nNo se ha alcanzado la convergencia en Newton-Raphson (excepción capturada: $e). Se penaliza la partícula.", log_enabled)
         return Inf, zeros(nNodos)
-    end   
+    end
 end
 
 function neiborIndices(i::Int, nNeibor::Int, nParticle::Int)
@@ -602,25 +449,24 @@ function runPSOHibrido(datos::Tuple, nParticle::Int, nInter::Int, log_enabled::B
     tipo_codificacion = datos[end]  # tipo_codificacion es el último elemento
     
     nGeneradores = size(datos[2], 1)
-    nLineas = size(datos[1], 1)
     log_to_file(log_file, "Iniciando PSO Híbrido con modo $tipo_codificacion", log_enabled)
     #log_to_file(log_file, "$nParticle partículas y $nInter iteraciones", log_enabled)
     
     # Crear enjambre
-    swarm = SwarmHibrido(evaluarParticula, nGeneradores, nLineas, datos, 
+    swarm = SwarmHibrido(evaluarParticula, nGeneradores, datos, 
                         nParticle=nParticle, nInter=nInter)
     
     # Inicializar y ejecutar
     initialize!(swarm)
-    gBest_u, gBest_l, gBest_pg, fitgBest = optimize!(swarm, log_file, log_enabled) 
+    gBest_u, gBest_pg, fitgBest = optimize_swarm!(swarm, log_file, log_enabled) 
     
     if log_enabled
         close(log_file)
     end
     if tipo_codificacion == "Cod_Potencia"
-        return gBest_u, gBest_l, gBest_pg, fitgBest
+        return gBest_u, gBest_pg, fitgBest
     else
-        return gBest_u, gBest_l, nothing, fitgBest
+        return gBest_u, nothing, fitgBest
     end
 end
 
