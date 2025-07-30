@@ -1,46 +1,64 @@
 # Main file for DC OPF (MILP) solver
 
+# Load required libraries
+using DataFrames
+using SparseArrays
+
 # Add solver paths
 push!(LOAD_PATH, "solvers/dc_opf_milp")
 push!(LOAD_PATH, "solvers/dc_opf_milp/functions")
 
 # Load solver functions
-include("solvers/dc_opf_milp/functions/gestorDatosLP.jl")
-include("solvers/dc_opf_milp/functions/matrizSusceptancia.jl")
+include("../solvers/dc_opf_milp/functions/gestorDatosLP.jl")
+include("../solvers/dc_opf_milp/functions/matrizSusceptancia.jl")
+# include("../common/data/extraerDatos.jl")
 
 # Load solver
-include("solvers/dc_opf_milp/dc_opf_milp.jl")
+include("../solvers/dc_opf_milp/dc_opf_milp.jl")
 
-function main_dc_opf()
+
+function main_dc_opf(args::Tuple{DataFrame, DataFrame, DataFrame, Int, Int, Int, String})
+    # Desempaquetar los argumentos
+    dLinea, dGen, dNodo, nN, nL, bMVA, solver = args
+    
     limpiarTerminal()
     println("=== DC OPF (MILP) SOLVER ===")
     println()
     
-    # Select case
-    caso = selectEstudio()
-    
-    if caso == "exit"
-        return
-    end
-    
-    println("Running DC OPF (MILP) for case: $caso")
+    println("Running DC OPF (MILP) with solver: $solver")
+    println("Number of nodes: $nN")
+    println("Number of lines: $nL")
+    println("Base power: $bMVA MVA")
     
     # Run the solver
     try
-        # Call the DC OPF solver
-        # Note: You may need to adjust the function call based on the actual function name
-        # in the dc_opf_milp.jl file
+        # Call the DC OPF solver with the unpacked arguments
         println("Starting DC OPF (MILP) optimization...")
         
-        # Add your solver execution code here
-        # For example: result = dc_opf_solve(caso)
+        m, solGen, solFlujos, solAngulos = LP_OPF(dLinea, dGen, dNodo, nN, nL, bMVA, solver)
         
         println("DC OPF (MILP) optimization completed successfully!")
         
+        # Return the results
+        return m, solGen, solFlujos, solAngulos
+        
     catch e
         println("Error running DC OPF (MILP): $e")
+        rethrow(e)
     end
-    
-    println("Press Enter to continue...")
-    readline()
+end 
+
+
+# Start the application
+
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    case_folder = "../casos/prueba"
+    solver = "Gurobi"
+    datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, ruta = extraerDatos(case_folder)
+    m, solGen, solFlujos, solAngulos = main_dc_opf((datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, solver))
+    println(m)
+    println(solGen)
+    println(solFlujos)
+    println(solAngulos)
 end 
