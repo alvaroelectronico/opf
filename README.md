@@ -72,7 +72,7 @@ opf/
 ├── config/                          # Configuración
 │   └── configuration.jl
 │
-├── cases/                           # Casos de estudio
+├── casos/                           # Casos de estudio
 │   ├── 3Nodos/
 │   ├── 4Nodos/
 │   ├── 5Nodos/
@@ -152,7 +152,7 @@ opf/
 
 ## Casos de Estudio
 
-Los casos de estudio están organizados por número de nodos en la carpeta `cases/`. Cada caso contiene:
+Los casos de estudio están organizados por número de nodos en la carpeta `casos/`. Cada caso contiene:
 - Datos de entrada del sistema eléctrico
 - Configuración de parámetros
 - Resultados de las simulaciones

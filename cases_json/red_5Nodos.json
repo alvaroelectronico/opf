@@ -1,0 +1,50 @@
+{
+  "datosGeneradores": {
+    "1": {
+      "BUS;P_MIN;P_MAX;Q_MIN;Q_MAX;P_COSTE0;P_COSTE1;P_COSTE2": "1;0;120;-60;60;18;9;0.04"
+    },
+    "2": {
+      "BUS;P_MIN;P_MAX;Q_MIN;Q_MAX;P_COSTE0;P_COSTE1;P_COSTE2": "2;0;100;-50;50;22;11;0.05"
+    },
+    "3": {
+      "BUS;P_MIN;P_MAX;Q_MIN;Q_MAX;P_COSTE0;P_COSTE1;P_COSTE2": "3;0;110;-55;55;20;10;0.045"
+    },
+    "4": {
+      "BUS;P_MIN;P_MAX;Q_MIN;Q_MAX;P_COSTE0;P_COSTE1;P_COSTE2": "4;0;130;-65;65;25;12;0.06"
+    }
+  },
+  "datosLineas": {
+    "1": {
+      "F_BUS;T_BUS;R;X;BSh;L_SMAX;status": "1;2;0.01;0.04;0;1000;1"
+    },
+    "2": {
+      "F_BUS;T_BUS;R;X;BSh;L_SMAX;status": "1;3;0.015;0.05;0;1000;1"
+    },
+    "3": {
+      "F_BUS;T_BUS;R;X;BSh;L_SMAX;status": "2;4;0.02;0.06;0;1000;1"
+    },
+    "4": {
+      "F_BUS;T_BUS;R;X;BSh;L_SMAX;status": "3;5;0.025;0.07;0;1000;1"
+    },
+    "5": {
+      "F_BUS;T_BUS;R;X;BSh;L_SMAX;status": "4;5;0.03;0.08;0;1000;1"
+    }
+  },
+  "datosNodos": {
+    "1": {
+      "BUS;PD;QD;Vmax;Vmin;basekV;zone": "1;40;20;1.1;0.9;1;1"
+    },
+    "2": {
+      "BUS;PD;QD;Vmax;Vmin;basekV;zone": "2;50;30;1.1;0.9;1;1"
+    },
+    "3": {
+      "BUS;PD;QD;Vmax;Vmin;basekV;zone": "3;60;35;1.1;0.9;1;1"
+    },
+    "4": {
+      "BUS;PD;QD;Vmax;Vmin;basekV;zone": "4;70;40;1.1;0.9;1;1"
+    },
+    "5": {
+      "BUS;PD;QD;Vmax;Vmin;basekV;zone": "5;80;45;1.1;0.9;1;1"
+    }
+  }
+}

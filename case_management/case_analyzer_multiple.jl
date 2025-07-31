@@ -22,7 +22,7 @@ include("Scripts/generar_datos_aleatorios.jl")
 function analisis_estadistico(red::String, n_instancias::Int64, n_replicaciones::Int64)
     # Obtenemos la ruta de la red para poder crear datos aleatorios de los parámetros 
     # a través de la función generar_datos_aleatorios. 
-    ruta_base = joinpath("Casos", red)
+    ruta_base = joinpath("casos", red)
 
     # Creación de la carpeta (si no existe) para guardar los xlsx con los resultados 
     mkpath("resultados_excel")

@@ -58,7 +58,7 @@ Función principal para generar y guardar datos aleatorios
 """
 function main()
     # Configuración
-    ruta_base = "../Casos/problema_chatGPT/"
+    ruta_base = "../casos/problema_chatGPT/"
     factor_variacion = 0.05  # Reducido a 5% de variación
     
     # Verificar que los archivos existen

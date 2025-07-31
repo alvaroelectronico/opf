@@ -20,7 +20,8 @@ function gestorDatosLP(Generador::DataFrame, Demanda::DataFrame, nn::Int, bMVA::
 
     # En los datos de los generadores se tiene en cuenta generadores que no están activos con status = 0
     # Por lo que se crea un sparsevec que contenga estos valores para considerar generadores apagados
-    Gen_Status = SparseArrays.sparsevec(Generador.BUS, Generador.status, nn)
+    # Gen_Status = SparseArrays.sparsevec(Generador.BUS, Generador.status, nn)
+    # println("ejecutado hasta aquí 3")
 
     # El Dataframe introducido como argumento "dDem" en "Demanda" contiene los datos de la demanda sacado de su correspondiente archivo "datosNodos.csv"
     # P_Demand es un sparsevec de "nn" elementos donde se recoge como 
@@ -29,6 +30,7 @@ function gestorDatosLP(Generador::DataFrame, Demanda::DataFrame, nn::Int, bMVA::
     P_Demand = SparseArrays.sparsevec(Demanda.BUS, Demanda.PD/bMVA, nn)
 
     # Se devuelve como resultado de la función todos los SparseArrays generados
-    return P_Cost0, P_Cost1, P_Cost2, P_Gen_lb, P_Gen_ub, Gen_Status, P_Demand
+    return P_Cost0, P_Cost1, P_Cost2, P_Gen_lb, P_Gen_ub, P_Demand
+    # return P_Cost0, P_Cost1, P_Cost2, P_Gen_lb, P_Gen_ub, Gen_Status, P_Demand
 
 end

@@ -443,7 +443,6 @@ function initialize_log(caso_estudio::String, log_enabled::Bool)
         subfolder_name = basename(caso_estudio)
         log_filename = "logs/pso_$(subfolder_name)_$(timestamp).log"
         mkpath("logs")  # Crear directorio si no existe
-        println(log_filename)
         return open(log_filename, "w")
     end
     return nothing

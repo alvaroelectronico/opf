@@ -263,8 +263,8 @@ end
 ## Función principal
 
 # Leer datos desde el archivo CSV
-datosLinea = CSV.read("Casos/pglib_opf_case30_ieee/datosLineas.csv", DataFrame)
-datosNodo = CSV.read("Casos/pglib_opf_case30_ieee/datosNodos.csv", DataFrame)
+datosLinea = CSV.read("casos/pglib_opf_case30_ieee/datosLineas.csv", DataFrame)
+datosNodo = CSV.read("casos/pglib_opf_case30_ieee/datosNodos.csv", DataFrame)
 
 # Fijar los datos de la potencia base
 bMVA = 100.0

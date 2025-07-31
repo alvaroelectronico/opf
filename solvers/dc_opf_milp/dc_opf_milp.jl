@@ -3,8 +3,16 @@
 
 # Explicar en caso de considerar pérdidas
 
-include("./Funciones/gestorDatosLP.jl")
-include("./Funciones/matrizSusceptancia.jl")
+using JuMP
+using Gurobi
+using HiGHS
+using Ipopt
+using DataFrames
+using SparseArrays
+include("../../utils/cargarFunciones.jl")
+include("../../utils/cargarLibrerias.jl")
+include("functions/gestorDatosLP.jl")
+include("functions/matrizSusceptancia.jl")
 
 function LP_OPF(dLinea::DataFrame, dGen::DataFrame, dNodo::DataFrame, nN::Int, nL::Int, bMVA::Int, solver::String) 
 
@@ -17,7 +25,8 @@ function LP_OPF(dLinea::DataFrame, dGen::DataFrame, dNodo::DataFrame, nN::Int, n
     # solver:   Solver a utilizar
 
     ########## GESTIÓN DE DATOS ##########
-    P_Cost0, P_Cost1, P_Cost2, P_Gen_lb, P_Gen_ub, Gen_Status, P_Demand = gestorDatosLP(dGen, dNodo, nN, bMVA)
+    # P_Cost0, P_Cost1, P_Cost2, P_Gen_lb, P_Gen_ub, Gen_Status, P_Demand = gestorDatosLP(dGen, dNodo, nN, bMVA)
+    P_Cost0, P_Cost1, P_Cost2, P_Gen_lb, P_Gen_ub, P_Demand = gestorDatosLP(dGen, dNodo, nN, bMVA)
     
     # Matriz de susceptancias de las líneas
     B = matrizSusceptancia(dLinea, nN, nL)
@@ -86,7 +95,8 @@ function LP_OPF(dLinea::DataFrame, dGen::DataFrame, dNodo::DataFrame, nN::Int, n
     @constraint(m, [i in 1:nL], -dLinea.L_SMAX[i] * dLinea.status[i] / bMVA <= B[dLinea.F_BUS[i], dLinea.T_BUS[i]] * (θ[dLinea.F_BUS[i]] - θ[dLinea.T_BUS[i]]) <= dLinea.L_SMAX[i] * dLinea.status[i] / bMVA)
 
     # Restricción de potencia mínima y máxima de los generadores
-    @constraint(m, [i in 1:nN], P_Gen_lb[i] * Gen_Status[i] <= P_G[i] <= P_Gen_ub[i] * Gen_Status[i])
+    # @constraint(m, [i in 1:nN], P_Gen_lb[i] * Gen_Status[i] <= P_G[i] <= P_Gen_ub[i] * Gen_Status[i])
+    @constraint(m, [i in 1:nN], P_Gen_lb[i]  <= P_G[i] <= P_Gen_ub[i])
 
     # Se selecciona el nodo 1 como nodo de refenrecia
     # Necesario en caso de HiGHS para evitar un bucle infinito al resolver la optimización
@@ -135,3 +145,15 @@ function LP_OPF(dLinea::DataFrame, dGen::DataFrame, dNodo::DataFrame, nN::Int, n
     end
 
 end
+
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    case_folder = "../../casos/prueba"
+    datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, ruta = extraerDatos(case_folder)
+    println(datosGenerador)
+    m, solGen, solFlujos, solAngulos = LP_OPF(datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, "Gurobi")
+    println(m)
+    println(solGen)
+    println(solFlujos)
+    println(solAngulos)
+end 

@@ -20,7 +20,7 @@ const COMMON_UI_DIR = joinpath(COMMON_DIR, "ui")
 
 # Case management paths
 const CASE_MANAGEMENT_DIR = joinpath(PROJECT_ROOT, "case_management")
-const CASES_DIR = joinpath(PROJECT_ROOT, "Casos")
+const CASES_DIR = joinpath(PROJECT_ROOT, "casos")
 
 # Main paths
 const MAIN_DIR = joinpath(PROJECT_ROOT, "main")
