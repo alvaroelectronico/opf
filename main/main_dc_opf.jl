@@ -3,6 +3,10 @@
 # Load required libraries
 using DataFrames
 using SparseArrays
+using JuMP
+using Gurobi
+using HiGHS
+using Ipopt
 
 # Add solver paths
 push!(LOAD_PATH, "solvers/dc_opf_milp")
