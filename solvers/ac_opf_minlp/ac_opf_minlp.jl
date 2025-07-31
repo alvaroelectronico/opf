@@ -1,5 +1,12 @@
-include("./Funciones/gestorDatosAC.jl")
-include("./Funciones/matrizAdmitancia.jl")
+using DataFrames
+using Ipopt
+using Couenne_jll
+using AmplNLWriter
+using JuMP
+include("../../utils/cargarFunciones.jl")
+include("../../utils/cargarLibrerias.jl")
+include("./functions/gestorDatosAC.jl")
+include("./functions/matrizAdmitancia.jl")
 
 
 function AC_OPF(dLinea::DataFrame, dGen::DataFrame, dNodos::DataFrame, nN::Int, nL::Int, bMVA::Int, solver::String)
@@ -165,3 +172,14 @@ function AC_OPF(dLinea::DataFrame, dGen::DataFrame, dNodos::DataFrame, nN::Int, 
     end
 
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    case_folder = "../../casos/prueba"
+    datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, ruta = extraerDatos(case_folder)
+    println(datosGenerador)
+    m, solGen, solFlujos, solAngulos = AC_OPF(datosLinea, datosGenerador, datosNodo, nNodos, nLineas, bMVA, "Couenne")
+    println(m)
+    println(solGen)
+    println(solFlujos)
+    println(solAngulos)
+end 
